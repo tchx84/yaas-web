@@ -1414,3 +1414,31 @@ Processing ActivationController#generate (for 127.0.0.1 at 2010-04-16 17:02:01) 
   Parameters: {"duration"=>"", "commit"=>"Generate", "method"=>"Keys", "authenticity_token"=>"4ZZkLlZnYcjuRaatawINa5svyl1vtGhwn4yxC94xJfc=", "file"=>#<File:/tmp/RackMultipart20100416-16176-1ifpbsj-0>}
 Completed in 81ms (View: 1, DB: 0) | 200 OK [http://localhost/activation/generate]
 Streaming file /tmp/activations20100416-16176-1xffqhc-0
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ActivationController#generate (for 127.0.0.1 at 2010-04-16 17:23:40) [POST]
+  Parameters: {"duration"=>"3434", "commit"=>"Generate", "method"=>"Keys", "authenticity_token"=>"4ZZkLlZnYcjuRaatawINa5svyl1vtGhwn4yxC94xJfc=", "file"=>#<File:/tmp/RackMultipart20100416-16176-178qkdv-0>}
+Completed in 79ms (View: 1, DB: 0) | 200 OK [http://localhost/activation/generate]
+Streaming file /tmp/activations20100416-16176-70rssb-0
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ActivationController#generate (for 127.0.0.1 at 2010-04-16 17:23:52) [POST]
+  Parameters: {"duration"=>"3434", "commit"=>"Generate", "method"=>"Keys", "authenticity_token"=>"4ZZkLlZnYcjuRaatawINa5svyl1vtGhwn4yxC94xJfc=", "file"=>#<File:/tmp/RackMultipart20100416-16176-lrj67f-0>}
+Completed in 76ms (View: 0, DB: 0) | 200 OK [http://localhost/activation/generate]
+Streaming file /tmp/activations20100416-16176-dagfwh-0
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ActivationController#generate (for 127.0.0.1 at 2010-04-16 17:25:50) [POST]
+  Parameters: {"duration"=>"3434", "commit"=>"Generate", "method"=>"Keys", "authenticity_token"=>"4ZZkLlZnYcjuRaatawINa5svyl1vtGhwn4yxC94xJfc=", "file"=>#<File:/tmp/RackMultipart20100416-16176-1qr23e6-0>}
+Completed in 96ms (View: 1, DB: 0) | 200 OK [http://localhost/activation/generate]
+Streaming file /tmp/activations20100416-16176-80q6yh-0
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ActivationController#generate (for 127.0.0.1 at 2010-04-16 17:25:54) [POST]
+  Parameters: {"duration"=>"3434", "commit"=>"Generate", "method"=>"Leases", "authenticity_token"=>"4ZZkLlZnYcjuRaatawINa5svyl1vtGhwn4yxC94xJfc=", "file"=>#<File:/tmp/RackMultipart20100416-16176-1vijjxg-0>}
+Completed in 61ms (View: 1, DB: 0) | 200 OK [http://localhost/activation/generate]
+Streaming file /tmp/activations20100416-16176-1jocymh-0

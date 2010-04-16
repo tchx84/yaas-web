@@ -27,17 +27,19 @@ class ActivationController < ApplicationController
 
     if data
       activations = nil
+      filename = nil
 
       case method
         when "Keys"
           activations = YaasWrapper::generate_devkeys(data)
+          filename = "development.sig"
 
         when "Leases"
-            activations = YaasWrapper::generate_leases(data, duration)
+          activations = YaasWrapper::generate_leases(data, duration)
+          filename = "lease.sig"
       end
 
-      if activations
-        filename = "#{method}-#{Date.today}"
+      if activations and filename
         send_file(activations.path, :filename => filename)    
       else
         render :text => "#{method} could not be created"
