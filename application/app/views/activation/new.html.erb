@@ -1,0 +1,13 @@
+<% form_tag({:action => :generate}, :multipart => true) do %>
+
+<%= label_tag(:duration, "Lease duration:") %>
+<%= text_field_tag(:duration) %>
+
+<%= label_tag(:file, "Laptops data:") %> 
+<%= file_field_tag 'file' %>
+
+<%= label_tag(:method, "Activation Method:") %> 
+<%=select_tag :method, options_for_select(%w{Keys Leases})%> 
+
+<%= submit_tag("Generate") %> 
+<% end %>
