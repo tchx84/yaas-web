@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
 
     if !session[:user_id]
       redirect_to :controller => "sessions", :action => "new"
-      session[:return] = request.request_uri
+      session[:return] = request.request_uri if !session[:return]
       return false
     end
 
@@ -48,7 +48,7 @@ class ApplicationController < ActionController::Base
   end
 
   def redirect_to_return
-    return_path = session[:return]    
+    return_path = session[:return] 
 
     if return_path
       session[:return] = nil

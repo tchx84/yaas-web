@@ -9581,3 +9581,1233 @@ Completed in 5ms (DB: 0) | 302 Found [http://localhost/sessions/destroy]
 Processing SessionsController#new (for 127.0.0.1 at 2010-04-19 17:43:06) [GET]
 Rendering sessions/new
 Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/sessions/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-19 17:46:50) [GET]
+
+ActionController::RoutingError (No route matches "/options" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#options (for 127.0.0.1 at 2010-04-19 17:47:49) [GET]
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as [:authenticate] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-19 17:47:49) [GET]
+Rendering sessions/new
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://localhost/sessions/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-19 17:48:02) [GET]
+Rendering sessions/new
+Completed in 21ms (View: 16, DB: 0) | 200 OK [http://localhost/sessions/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-04-19 17:48:08) [POST]
+  Parameters: {"name"=>"tch", "commit"=>"Login", "authenticity_token"=>"HPop2mf+sdS0cdz0oT0Jimx3/iJxaGRKoJ3ng7/qEE8=", "password"=>"123"}
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`name` = 'tch' AND `users`.`password` = '123') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 17ms (DB: 2) | 302 Found [http://localhost/sessions/create]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#options (for 127.0.0.1 at 2010-04-19 17:48:08) [GET]
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 8) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/options
+Completed in 25ms (View: 5, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#change_password (for 127.0.0.1 at 2010-04-19 17:48:10) [GET]
+  Parameters: {"id"=>"8"}
+Rendering template within layouts/users
+Rendering users/change_password
+Completed in 21ms (View: 10, DB: 0) | 200 OK [http://localhost/users/change_password/8]
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#options (for 127.0.0.1 at 2010-04-19 17:48:11) [GET]
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 8) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/options
+Completed in 11ms (View: 2, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ActivationsController#new (for 127.0.0.1 at 2010-04-19 17:48:12) [GET]
+Rendering activations/new
+Completed in 20ms (View: 8, DB: 0) | 200 OK [http://localhost/activations/new]
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#options (for 127.0.0.1 at 2010-04-19 17:48:13) [GET]
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 8) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/options
+Completed in 26ms (View: 7, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2010-04-19 17:48:15) [GET]
+Redirected to http://localhost:3000/sessions/new
+Completed in 5ms (DB: 0) | 302 Found [http://localhost/sessions/destroy]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-19 17:48:15) [GET]
+Rendering sessions/new
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/sessions/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-04-19 17:48:24) [POST]
+  Parameters: {"name"=>"root", "commit"=>"Login", "authenticity_token"=>"HPop2mf+sdS0cdz0oT0Jimx3/iJxaGRKoJ3ng7/qEE8=", "password"=>"123"}
+  [4;36;1mUser Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`name` = 'root' AND `users`.`password` = '123') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 8ms (DB: 1) | 302 Found [http://localhost/sessions/create]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#options (for 127.0.0.1 at 2010-04-19 17:48:24) [GET]
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/options
+Completed in 10ms (View: 2, DB: 1) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-04-19 17:48:26) [GET]
+  [4;36;1mUser Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (admin = 0) [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 11ms (View: 3, DB: 1) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#options (for 127.0.0.1 at 2010-04-19 17:48:28) [GET]
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/options
+Completed in 25ms (View: 6, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-19 17:48:29) [GET]
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 37ms (View: 17, DB: 2) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#options (for 127.0.0.1 at 2010-04-19 17:48:31) [GET]
+  [4;36;1mUser Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/options
+Completed in 11ms (View: 2, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#change_password (for 127.0.0.1 at 2010-04-19 17:48:32) [GET]
+  Parameters: {"id"=>"3"}
+Rendering template within layouts/users
+Rendering users/change_password
+Completed in 24ms (View: 12, DB: 0) | 200 OK [http://localhost/users/change_password/3]
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#options (for 127.0.0.1 at 2010-04-19 17:48:34) [GET]
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/options
+Completed in 25ms (View: 6, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-04-19 17:49:36) [GET]
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (admin = 0) [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 12ms (View: 3, DB: 1) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#options (for 127.0.0.1 at 2010-04-19 17:49:39) [GET]
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/options
+Completed in 27ms (View: 6, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-04-19 17:50:32) [GET]
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (admin = 0) [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 37ms (View: 16, DB: 2) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2010-04-19 17:51:28) [GET]
+Redirected to http://localhost:3000/sessions/new
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/sessions/destroy]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-19 17:51:28) [GET]
+Rendering sessions/new
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/sessions/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-04-19 17:51:49) [POST]
+  Parameters: {"name"=>"root", "commit"=>"Login", "authenticity_token"=>"HPop2mf+sdS0cdz0oT0Jimx3/iJxaGRKoJ3ng7/qEE8=", "password"=>"123"}
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'root' AND `users`.`password` = '123') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 13ms (DB: 1) | 302 Found [http://localhost/sessions/create]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#options (for 127.0.0.1 at 2010-04-19 17:51:49) [GET]
+  [4;36;1mUser Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/options
+Completed in 73ms (View: 7, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-04-19 17:51:50) [GET]
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (admin = 0) [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 28ms (View: 6, DB: 2) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#options (for 127.0.0.1 at 2010-04-19 17:51:51) [GET]
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/options
+Completed in 26ms (View: 6, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-19 17:51:52) [GET]
+  [4;36;1mUser Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 28ms (View: 8, DB: 2) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#options (for 127.0.0.1 at 2010-04-19 17:51:53) [GET]
+  [4;35;1mUser Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/options
+Completed in 28ms (View: 7, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#change_password (for 127.0.0.1 at 2010-04-19 17:51:54) [GET]
+  Parameters: {"id"=>"3"}
+Rendering template within layouts/users
+Rendering users/change_password
+Completed in 22ms (View: 11, DB: 0) | 200 OK [http://localhost/users/change_password/3]
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#options (for 127.0.0.1 at 2010-04-19 17:51:55) [GET]
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/options
+Completed in 26ms (View: 6, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ActivationsController#new (for 127.0.0.1 at 2010-04-19 17:51:56) [GET]
+Rendering activations/new
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/activations/new]
+  [4;35;1mUser Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#options (for 127.0.0.1 at 2010-04-19 17:51:57) [GET]
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/options
+Completed in 33ms (View: 7, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2010-04-19 17:53:31) [GET]
+Redirected to http://localhost:3000/sessions/new
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/sessions/destroy]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-19 17:53:31) [GET]
+Rendering sessions/new
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/sessions/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-19 17:55:23) [GET]
+Rendering sessions/new
+Completed in 15ms (View: 10, DB: 0) | 200 OK [http://localhost/sessions/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-04-19 17:55:28) [POST]
+  Parameters: {"name"=>"root", "commit"=>"Login", "authenticity_token"=>"HPop2mf+sdS0cdz0oT0Jimx3/iJxaGRKoJ3ng7/qEE8=", "password"=>"123"}
+  [4;35;1mUser Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'root' AND `users`.`password` = '123') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 19ms (DB: 2) | 302 Found [http://localhost/sessions/create]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#options (for 127.0.0.1 at 2010-04-19 17:55:28) [GET]
+  [4;36;1mUser Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/options
+Completed in 74ms (View: 2, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-19 17:56:48) [GET]
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 39ms (View: 18, DB: 2) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-04-19 17:56:55) [POST]
+  Parameters: {"name"=>"tch2", "commit"=>"Create", "authenticity_token"=>"HPop2mf+sdS0cdz0oT0Jimx3/iJxaGRKoJ3ng7/qEE8=", "password"=>"123"}
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO `users` (`name`, `created_at`, `updated_at`, `admin`, `password`) VALUES('tch2', '2010-04-19 21:56:55', '2010-04-19 21:56:55', 0, '123')[0m
+  [4;36;1mSQL (17.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed in 30ms (DB: 19) | 302 Found [http://localhost/users/create]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-04-19 17:56:55) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (admin = 0) [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 13ms (View: 3, DB: 1) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-04-19 17:56:57) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 9) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 34ms (View: 13, DB: 2) | 200 OK [http://localhost/users/show/9]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#options (for 127.0.0.1 at 2010-04-19 17:56:58) [GET]
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/options
+Completed in 25ms (View: 6, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-04-19 17:57:17) [GET]
+  [4;35;1mUser Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (admin = 0) [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 12ms (View: 3, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-04-19 17:57:19) [GET]
+  Parameters: {"id"=>"9"}
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 9) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 34ms (View: 13, DB: 2) | 200 OK [http://localhost/users/show/9]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#options (for 127.0.0.1 at 2010-04-19 17:57:20) [GET]
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/options
+Completed in 26ms (View: 6, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#change_password (for 127.0.0.1 at 2010-04-19 17:57:22) [GET]
+  Parameters: {"id"=>"3"}
+Rendering template within layouts/users
+Rendering users/change_password
+Completed in 31ms (View: 20, DB: 0) | 200 OK [http://localhost/users/change_password/3]
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#save_changed_password (for 127.0.0.1 at 2010-04-19 17:57:27) [POST]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"HPop2mf+sdS0cdz0oT0Jimx3/iJxaGRKoJ3ng7/qEE8=", "new_password"=>"123", "old_password"=>"123", "new_password_validation"=>"123"}
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 27ms (DB: 2) | 302 Found [http://localhost/users/save_changed_password]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#options (for 127.0.0.1 at 2010-04-19 17:57:27) [GET]
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/options
+Completed in 16ms (View: 4, DB: 1) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2010-04-19 17:57:29) [GET]
+Redirected to http://localhost:3000/sessions/new
+Completed in 5ms (DB: 0) | 302 Found [http://localhost/sessions/destroy]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-19 17:57:29) [GET]
+Rendering sessions/new
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/sessions/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-04-19 17:57:33) [POST]
+  Parameters: {"name"=>"root", "commit"=>"Login", "authenticity_token"=>"HPop2mf+sdS0cdz0oT0Jimx3/iJxaGRKoJ3ng7/qEE8=", "password"=>"123"}
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`name` = 'root' AND `users`.`password` = '123') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 19ms (DB: 2) | 302 Found [http://localhost/sessions/create]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#options (for 127.0.0.1 at 2010-04-19 17:57:33) [GET]
+  [4;35;1mUser Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/options
+Completed in 11ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-19 17:57:34) [GET]
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 28ms (View: 8, DB: 2) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#options (for 127.0.0.1 at 2010-04-19 17:57:38) [GET]
+  [4;35;1mUser Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/options
+Completed in 15ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-19 17:57:40) [GET]
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 27ms (View: 8, DB: 2) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-04-19 17:57:45) [POST]
+  Parameters: {"name"=>"123", "commit"=>"Create", "authenticity_token"=>"HPop2mf+sdS0cdz0oT0Jimx3/iJxaGRKoJ3ng7/qEE8=", "password"=>"123"}
+  [4;35;1mUser Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`name`, `created_at`, `updated_at`, `admin`, `password`) VALUES('123', '2010-04-19 21:57:45', '2010-04-19 21:57:45', 0, '123')[0m
+  [4;35;1mSQL (7.8ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed in 21ms (DB: 9) | 302 Found [http://localhost/users/create]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-04-19 17:57:45) [GET]
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (admin = 0) [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 16ms (View: 6, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#destroy (for 127.0.0.1 at 2010-04-19 17:57:47) [GET]
+  Parameters: {"id"=>"10"}
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;35;1mUser Load (6.9ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 10) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Destroy (0.4ms)[0m   [0mDELETE FROM `users` WHERE `id` = 10[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed in 34ms (DB: 11) | 302 Found [http://localhost/users/destroy/10]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-04-19 17:57:47) [GET]
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (admin = 0) [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 29ms (View: 8, DB: 3) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#destroy (for 127.0.0.1 at 2010-04-19 17:57:48) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 9) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Destroy (0.3ms)[0m   [0;1mDELETE FROM `users` WHERE `id` = 9[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed in 25ms (DB: 5) | 302 Found [http://localhost/users/destroy/9]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-04-19 17:57:48) [GET]
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (admin = 0) [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 40ms (View: 6, DB: 3) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#destroy (for 127.0.0.1 at 2010-04-19 17:57:51) [GET]
+  Parameters: {"id"=>"8"}
+  [4;35;1mUser Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 8) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Destroy (0.1ms)[0m   [0mDELETE FROM `users` WHERE `id` = 8[0m
+  [4;36;1mSQL (4.2ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed in 14ms (DB: 6) | 302 Found [http://localhost/users/destroy/8]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-04-19 17:57:51) [GET]
+  [4;36;1mUser Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (admin = 0) [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 10ms (View: 2, DB: 1) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#options (for 127.0.0.1 at 2010-04-19 17:57:52) [GET]
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/options
+Completed in 26ms (View: 6, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-19 17:57:53) [GET]
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 27ms (View: 8, DB: 2) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-04-19 17:57:57) [POST]
+  Parameters: {"name"=>"tch", "commit"=>"Create", "authenticity_token"=>"HPop2mf+sdS0cdz0oT0Jimx3/iJxaGRKoJ3ng7/qEE8=", "password"=>"123"}
+  [4;36;1mUser Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`name`, `created_at`, `updated_at`, `admin`, `password`) VALUES('tch', '2010-04-19 21:57:57', '2010-04-19 21:57:57', 0, '123')[0m
+  [4;36;1mSQL (9.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed in 21ms (DB: 10) | 302 Found [http://localhost/users/create]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-04-19 17:57:57) [GET]
+  [4;36;1mUser Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (admin = 0) [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 12ms (View: 2, DB: 1) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#options (for 127.0.0.1 at 2010-04-19 17:57:59) [GET]
+  [4;36;1mUser Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/options
+Completed in 16ms (View: 2, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2010-04-19 17:58:00) [GET]
+Redirected to http://localhost:3000/sessions/new
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/sessions/destroy]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-19 17:58:00) [GET]
+Rendering sessions/new
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/sessions/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-04-19 17:58:05) [POST]
+  Parameters: {"name"=>"tch", "commit"=>"Login", "authenticity_token"=>"HPop2mf+sdS0cdz0oT0Jimx3/iJxaGRKoJ3ng7/qEE8=", "password"=>"123"}
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'tch' AND `users`.`password` = '123') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 20ms (DB: 3) | 302 Found [http://localhost/sessions/create]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#options (for 127.0.0.1 at 2010-04-19 17:58:05) [GET]
+  [4;36;1mUser Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 11) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/options
+Completed in 11ms (View: 2, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2010-04-19 17:58:07) [GET]
+Redirected to http://localhost:3000/sessions/new
+Completed in 4ms (DB: 0) | 302 Found [http://localhost/sessions/destroy]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-19 17:58:07) [GET]
+Rendering sessions/new
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/sessions/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-04-19 17:58:10) [POST]
+  Parameters: {"name"=>"tch", "commit"=>"Login", "authenticity_token"=>"HPop2mf+sdS0cdz0oT0Jimx3/iJxaGRKoJ3ng7/qEE8=", "password"=>"32432424"}
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'tch' AND `users`.`password` = '32432424') LIMIT 1[0m
+Redirected to http://localhost:3000/sessions
+Completed in 89ms (DB: 2) | 302 Found [http://localhost/sessions/create]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#index (for 127.0.0.1 at 2010-04-19 17:58:10) [GET]
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as [:authenticate] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/sessions]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-19 17:58:10) [GET]
+Rendering sessions/new
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/sessions/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-04-19 17:58:16) [POST]
+  Parameters: {"name"=>"tch", "commit"=>"Login", "authenticity_token"=>"HPop2mf+sdS0cdz0oT0Jimx3/iJxaGRKoJ3ng7/qEE8=", "password"=>"123"}
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`name` = 'tch' AND `users`.`password` = '123') LIMIT 1[0m
+Redirected to http://localhost:3000/sessions
+Completed in 19ms (DB: 2) | 302 Found [http://localhost/sessions/create]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#index (for 127.0.0.1 at 2010-04-19 17:58:16) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: admin, authenticate, create, current_user, destroy, new, and redirect_to_return):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mUser Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-04-19 17:58:34) [POST]
+  Parameters: {"name"=>"tch", "commit"=>"Login", "authenticity_token"=>"HPop2mf+sdS0cdz0oT0Jimx3/iJxaGRKoJ3ng7/qEE8=", "password"=>"123"}
+  [4;35;1mUser Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'tch' AND `users`.`password` = '123') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 18ms (DB: 2) | 302 Found [http://localhost/sessions/create]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#options (for 127.0.0.1 at 2010-04-19 17:58:34) [GET]
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 11) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/options
+Completed in 24ms (View: 5, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-04-19 17:58:39) [POST]
+  Parameters: {"name"=>"tch", "commit"=>"Login", "authenticity_token"=>"HPop2mf+sdS0cdz0oT0Jimx3/iJxaGRKoJ3ng7/qEE8=", "password"=>"123"}
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'tch' AND `users`.`password` = '123') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 90ms (DB: 1) | 302 Found [http://localhost/sessions/create]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#options (for 127.0.0.1 at 2010-04-19 17:58:39) [GET]
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 11) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/options
+Completed in 12ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2010-04-19 17:58:42) [GET]
+Redirected to http://localhost:3000/sessions/new
+Completed in 5ms (DB: 0) | 302 Found [http://localhost/sessions/destroy]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-19 17:58:42) [GET]
+Rendering sessions/new
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/sessions/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-04-19 17:58:45) [POST]
+  Parameters: {"name"=>"tch", "commit"=>"Login", "authenticity_token"=>"HPop2mf+sdS0cdz0oT0Jimx3/iJxaGRKoJ3ng7/qEE8=", "password"=>"123"}
+  [4;35;1mUser Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'tch' AND `users`.`password` = '123') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 19ms (DB: 2) | 302 Found [http://localhost/sessions/create]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#options (for 127.0.0.1 at 2010-04-19 17:58:45) [GET]
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 11) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/options
+Completed in 11ms (View: 2, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#change_password (for 127.0.0.1 at 2010-04-19 17:58:48) [GET]
+  Parameters: {"id"=>"11"}
+Rendering template within layouts/users
+Rendering users/change_password
+Completed in 15ms (View: 4, DB: 0) | 200 OK [http://localhost/users/change_password/11]
+  [4;35;1mUser Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#save_changed_password (for 127.0.0.1 at 2010-04-19 17:58:52) [POST]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"HPop2mf+sdS0cdz0oT0Jimx3/iJxaGRKoJ3ng7/qEE8=", "new_password"=>"123123", "old_password"=>"123", "new_password_validation"=>"123123"}
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 11) LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-04-19 21:58:52', `password` = '123123' WHERE `id` = 11[0m
+  [4;35;1mSQL (4.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 106ms (DB: 6) | 302 Found [http://localhost/users/save_changed_password]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#options (for 127.0.0.1 at 2010-04-19 17:58:52) [GET]
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 11) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/options
+Completed in 11ms (View: 2, DB: 1) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2010-04-19 17:58:53) [GET]
+Redirected to http://localhost:3000/sessions/new
+Completed in 5ms (DB: 0) | 302 Found [http://localhost/sessions/destroy]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-19 17:58:53) [GET]
+Rendering sessions/new
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/sessions/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-04-19 17:58:56) [POST]
+  Parameters: {"name"=>"tch", "commit"=>"Login", "authenticity_token"=>"HPop2mf+sdS0cdz0oT0Jimx3/iJxaGRKoJ3ng7/qEE8=", "password"=>"123123"}
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`name` = 'tch' AND `users`.`password` = '123123') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 19ms (DB: 2) | 302 Found [http://localhost/sessions/create]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#options (for 127.0.0.1 at 2010-04-19 17:58:56) [GET]
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 11) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/options
+Completed in 11ms (View: 2, DB: 1) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2010-04-19 17:58:58) [GET]
+Redirected to http://localhost:3000/sessions/new
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/sessions/destroy]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-19 17:58:59) [GET]
+Rendering sessions/new
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/sessions/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-04-19 17:59:02) [POST]
+  Parameters: {"name"=>"tch", "commit"=>"Login", "authenticity_token"=>"HPop2mf+sdS0cdz0oT0Jimx3/iJxaGRKoJ3ng7/qEE8=", "password"=>"123123123"}
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`name` = 'tch' AND `users`.`password` = '123123123') LIMIT 1[0m
+Redirected to http://localhost:3000/sessions
+Completed in 19ms (DB: 2) | 302 Found [http://localhost/sessions/create]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#index (for 127.0.0.1 at 2010-04-19 17:59:02) [GET]
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as [:authenticate] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/sessions]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-19 17:59:02) [GET]
+Rendering sessions/new
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/sessions/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-04-19 17:59:07) [POST]
+  Parameters: {"name"=>"tch", "commit"=>"Login", "authenticity_token"=>"HPop2mf+sdS0cdz0oT0Jimx3/iJxaGRKoJ3ng7/qEE8=", "password"=>"123123"}
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'tch' AND `users`.`password` = '123123') LIMIT 1[0m
+Redirected to http://localhost:3000/sessions
+Completed in 17ms (DB: 2) | 302 Found [http://localhost/sessions/create]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#index (for 127.0.0.1 at 2010-04-19 17:59:07) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: admin, authenticate, create, current_user, destroy, new, and redirect_to_return):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mUser Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#options (for 127.0.0.1 at 2010-04-19 18:00:19) [GET]
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as [:authenticate] rendered_or_redirected.
+Completed in 6ms (DB: 0) | 302 Found [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-19 18:00:19) [GET]
+Rendering sessions/new
+Completed in 23ms (View: 21, DB: 0) | 200 OK [http://localhost/sessions/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-04-19 18:00:23) [POST]
+  Parameters: {"name"=>"tch", "commit"=>"Login", "authenticity_token"=>"bIulPY7w8/YeN1enGJNuugoRHbhu0sWn9HaZA5QLQvk=", "password"=>"123123"}
+  [4;35;1mUser Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'tch' AND `users`.`password` = '123123') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 17ms (DB: 1) | 302 Found [http://localhost/sessions/create]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#options (for 127.0.0.1 at 2010-04-19 18:00:24) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 11) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/options
+Completed in 26ms (View: 16, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2010-04-19 18:00:25) [GET]
+Redirected to http://localhost:3000/sessions/new
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/sessions/destroy]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-19 18:00:25) [GET]
+Rendering sessions/new
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/sessions/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-04-19 18:00:30) [POST]
+  Parameters: {"name"=>"tch", "commit"=>"Login", "authenticity_token"=>"bIulPY7w8/YeN1enGJNuugoRHbhu0sWn9HaZA5QLQvk=", "password"=>"123123123123"}
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'tch' AND `users`.`password` = '123123123123') LIMIT 1[0m
+Redirected to http://localhost:3000/sessions
+Completed in 20ms (DB: 3) | 302 Found [http://localhost/sessions/create]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#index (for 127.0.0.1 at 2010-04-19 18:00:30) [GET]
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as [:authenticate] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/sessions]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-19 18:00:30) [GET]
+Rendering sessions/new
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/sessions/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-04-19 18:00:34) [POST]
+  Parameters: {"name"=>"tch", "commit"=>"Login", "authenticity_token"=>"bIulPY7w8/YeN1enGJNuugoRHbhu0sWn9HaZA5QLQvk=", "password"=>"123123"}
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`name` = 'tch' AND `users`.`password` = '123123') LIMIT 1[0m
+Redirected to http://localhost:3000/sessions
+Completed in 8ms (DB: 1) | 302 Found [http://localhost/sessions/create]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#index (for 127.0.0.1 at 2010-04-19 18:00:34) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: admin, authenticate, create, current_user, destroy, new, and redirect_to_return):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-04-19 18:02:00) [POST]
+  Parameters: {"name"=>"tch", "commit"=>"Login", "authenticity_token"=>"bIulPY7w8/YeN1enGJNuugoRHbhu0sWn9HaZA5QLQvk=", "password"=>"123123"}
+  [4;35;1mUser Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'tch' AND `users`.`password` = '123123') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 21ms (DB: 2) | 302 Found [http://localhost/sessions/create]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#options (for 127.0.0.1 at 2010-04-19 18:02:00) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 11) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/options
+Completed in 12ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2010-04-19 18:02:02) [GET]
+Redirected to http://localhost:3000/sessions/new
+Completed in 5ms (DB: 0) | 302 Found [http://localhost/sessions/destroy]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-19 18:02:02) [GET]
+Rendering sessions/new
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/sessions/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-04-19 18:02:10) [POST]
+  Parameters: {"name"=>"tch", "commit"=>"Login", "authenticity_token"=>"bIulPY7w8/YeN1enGJNuugoRHbhu0sWn9HaZA5QLQvk=", "password"=>"123123123"}
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'tch' AND `users`.`password` = '123123123') LIMIT 1[0m
+Redirected to http://localhost:3000/sessions
+Completed in 18ms (DB: 2) | 302 Found [http://localhost/sessions/create]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#index (for 127.0.0.1 at 2010-04-19 18:02:10) [GET]
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as [:authenticate] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/sessions]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-19 18:02:10) [GET]
+Rendering sessions/new
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/sessions/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-04-19 18:02:14) [POST]
+  Parameters: {"name"=>"tch", "commit"=>"Login", "authenticity_token"=>"bIulPY7w8/YeN1enGJNuugoRHbhu0sWn9HaZA5QLQvk=", "password"=>"123123"}
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`name` = 'tch' AND `users`.`password` = '123123') LIMIT 1[0m
+Redirected to http://localhost:3000/sessions
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/sessions/create]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#index (for 127.0.0.1 at 2010-04-19 18:02:15) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: admin, authenticate, create, current_user, destroy, new, and redirect_to_return):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-04-19 18:04:27) [POST]
+  Parameters: {"name"=>"tch", "commit"=>"Login", "authenticity_token"=>"bIulPY7w8/YeN1enGJNuugoRHbhu0sWn9HaZA5QLQvk=", "password"=>"123123"}
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (47.3ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (unprocessable_entity)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-04-19 18:05:02) [POST]
+  Parameters: {"name"=>"tch", "commit"=>"Login", "authenticity_token"=>"bIulPY7w8/YeN1enGJNuugoRHbhu0sWn9HaZA5QLQvk=", "password"=>"123123"}
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (36.7ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (unprocessable_entity)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#options (for 127.0.0.1 at 2010-04-19 18:05:57) [GET]
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as [:authenticate] rendered_or_redirected.
+Completed in 6ms (DB: 0) | 302 Found [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-19 18:05:57) [GET]
+Rendering sessions/new
+Completed in 23ms (View: 20, DB: 0) | 200 OK [http://localhost/sessions/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-04-19 18:06:02) [POST]
+  Parameters: {"name"=>"tch", "commit"=>"Login", "authenticity_token"=>"6h1l8D3Qz5jwpsw75JtMoong8QHmuhzpDYAMLVReCO0=", "password"=>"123123"}
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'tch' AND `users`.`password` = '123123') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 41ms (DB: 2) | 302 Found [http://localhost/sessions/create]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#options (for 127.0.0.1 at 2010-04-19 18:06:02) [GET]
+  [4;36;1mUser Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 11) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/options
+Completed in 24ms (View: 14, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2010-04-19 18:06:07) [GET]
+Redirected to http://localhost:3000/sessions/new
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/sessions/destroy]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-19 18:06:07) [GET]
+Rendering sessions/new
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/sessions/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-04-19 18:06:10) [POST]
+  Parameters: {"name"=>"tch", "commit"=>"Login", "authenticity_token"=>"6h1l8D3Qz5jwpsw75JtMoong8QHmuhzpDYAMLVReCO0=", "password"=>"123123132"}
+  [4;35;1mUser Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'tch' AND `users`.`password` = '123123132') LIMIT 1[0m
+Redirected to http://localhost:3000/sessions/new
+Completed in 19ms (DB: 2) | 302 Found [http://localhost/sessions/create]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-19 18:06:10) [GET]
+Rendering sessions/new
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/sessions/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-04-19 18:06:15) [POST]
+  Parameters: {"name"=>"tch", "commit"=>"Login", "authenticity_token"=>"6h1l8D3Qz5jwpsw75JtMoong8QHmuhzpDYAMLVReCO0=", "password"=>"123123"}
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'tch' AND `users`.`password` = '123123') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 18ms (DB: 2) | 302 Found [http://localhost/sessions/create]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#options (for 127.0.0.1 at 2010-04-19 18:06:15) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 11) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/options
+Completed in 77ms (View: 2, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2010-04-19 18:06:17) [GET]
+Redirected to http://localhost:3000/sessions/new
+Completed in 6ms (DB: 0) | 302 Found [http://localhost/sessions/destroy]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-19 18:06:17) [GET]
+Rendering sessions/new
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/sessions/new]

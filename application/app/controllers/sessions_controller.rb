@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     flash[:message] = "Bye bye"
-    redirect_to :controller => "sessions", :action => "new"
+    redirect_to :action => "new"
   end
 
   def create
@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
       redirect_to_return
     else
       flash[:message] = "User's name or password incorrect"
-      redirect_to :action => new
+      redirect_to :action => "new"
     end
   end
 
