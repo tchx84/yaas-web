@@ -1,0 +1,27 @@
+<h1>New Activation</h1>
+
+<% form_tag({:action => :create}, :multipart => true) do %>
+
+  <%= error_messages_for 'activations' %><br/>
+
+  <p>
+    <%= label_tag(:duration, "Lease duration:") %><br />
+    <%= text_field_tag(:duration) %>
+  </p>
+
+  <p>
+    <%= label_tag(:file, "Laptops data:") %><br />
+    <%= file_field_tag 'file' %>
+  </p>
+
+  <p>
+    <%= label_tag(:method, "Activation Method:") %><br />
+    <%=select_tag :method, options_for_select(%w{Keys Leases})%> 
+  </p>
+
+  <p>
+    <%= submit_tag("Generate") %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', :controller => 'users', :action => 'options' %>

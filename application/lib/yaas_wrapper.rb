@@ -41,6 +41,7 @@ module YaasWrapper
   def self.prepare_file(activations)
     tempfile = Tempfile.new('activations')
     tempfile.write(activations)
+    tempfile.close
     tempfile
   end
 

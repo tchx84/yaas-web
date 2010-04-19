@@ -1,0 +1,23 @@
+<h1>Listing users</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Admin</th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%=h user.name %></td>
+    <td><%=h user.admin %></td>
+    <td><%= link_to 'Show',    :action => 'show',    :id => user.id %></td>
+    <td><%= link_to 'Edit',    :action => 'edit',    :id => user.id %></td>
+    <td><%= link_to 'Destroy', :action => 'destroy', :id => user.id %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Add user', :action => 'new' %> |
+<%= link_to 'Back', :action => 'options' %>

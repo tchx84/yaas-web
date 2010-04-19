@@ -1,5 +1,18 @@
-# Filters added to this controller apply to all controllers in the application.
-# Likewise, all the methods added will be available for all controllers.
+# Copyright Paraguay Educa 2010, Martin Abente
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>
+#
 
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
@@ -7,4 +20,42 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+
+  before_filter :authenticate
+
+  def authenticate
+
+    if !session[:user_id]
+      redirect_to :controller => "sessions", :action => "new"
+      session[:return] = request.request_uri
+      return false
+    end
+
+    true
+  end
+
+  def admin
+    if !current_user.admin
+      redirect_to :controller => "options"
+      return false
+    end
+
+    true
+  end
+
+  def current_user
+    User.find_by_id(session[:user_id])
+  end
+
+  def redirect_to_return
+    return_path = session[:return]    
+
+    if return_path
+      session[:return] = nil
+      redirect_to return_path
+    else
+      redirect_to :controller => 'users', :action => 'options'
+    end
+  end
+
 end

@@ -1,0 +1,20 @@
+<h1>Edit User</h1>
+
+<% form_tag({:action => :update, :id => @user.id}) do %>
+
+  <p>
+    <%= label_tag(:name, "Username") %><br />
+    <%= text_field_tag(:name, @user.name) %>
+  </p>
+
+  <p>
+    <%= label_tag(:password, "Password") %><br />
+    <%= text_field_tag(:password, @user.password) %>
+  </p>
+
+  <p>
+    <%= submit_tag("Update") %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', :action => 'options' %>

@@ -14,13 +14,12 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>
 #
 
-class ActivationController < ApplicationController
+class ActivationsController < ApplicationController
 
   def new
-     render :file => 'app/views/activation/new.html.erb'
   end
 
-  def generate
+  def create
     data = params[:file] ? params[:file] : nil 
     duration = params[:duration] ? params[:duration].to_i : 0 
     method = params[:method] ? params[:method] : nil

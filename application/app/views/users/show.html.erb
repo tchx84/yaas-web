@@ -1,0 +1,12 @@
+<p>
+  <b>Name:</b>
+  <%=h @user.name %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%=h @user.password %>
+</p>
+
+<%= link_to 'Edit', :action => 'edit', :id => @user.id %> |
+<%= link_to 'Back', :action => 'options' %>

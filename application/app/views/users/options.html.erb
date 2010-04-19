@@ -1,0 +1,8 @@
+<% if @user.admin %>
+  <%= link_to 'List users', :controller => 'users', :action => 'index' %>
+  <%= link_to 'Add user', :controller => 'users', :action => 'new' %>
+<% end %>
+
+<%= link_to 'Change password', :controller => 'users', :action => 'change_password', :id => @user.id %>
+<%= link_to 'Create activation', :controller => 'activations', :action => 'new' %>
+<%= link_to 'Logout', :controller => 'sessions', :action => 'destroy' %>
