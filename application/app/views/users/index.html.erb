@@ -2,14 +2,16 @@
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Admin</th>
+    <th>Name:</th>
+    <th>Email:</th>
+    <th>Bucket:</th>
   </tr>
 
 <% @users.each do |user| %>
   <tr>
     <td><%=h user.name %></td>
-    <td><%=h user.admin %></td>
+    <td><%=h user.email %></td>
+    <td><%=h user.bucket %></td>
     <td><%= link_to 'Show',    :action => 'show',    :id => user.id %></td>
     <td><%= link_to 'Edit',    :action => 'edit',    :id => user.id %></td>
     <td><%= link_to 'Destroy', :action => 'destroy', :id => user.id %></td>
@@ -19,5 +21,5 @@
 
 <br />
 
-<%= link_to 'Add user', :action => 'new' %> |
+<%= link_to 'Create user', :action => 'new' %> |
 <%= link_to 'Back', :action => 'options' %>

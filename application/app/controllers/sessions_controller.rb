@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    flash[:message] = "Bye bye"
+    flash[:notice] = "Session terminated"
     redirect_to :action => "new"
   end
 
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
     if session[:user_id]
       redirect_to_return
     else
-      flash[:message] = "User's name or password incorrect"
+      flash[:error] = "User's name or password incorrect"
       redirect_to :action => "new"
     end
   end

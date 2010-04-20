@@ -16,38 +16,71 @@
 
 class ActivationsController < ApplicationController
 
+  before_filter :admin, :only => [:destroy]
+
+  def index
+    @admin = current_user.admin
+    @activations = accessible_activations.find(:all, :order => "created_at DESC")
+  end
+
   def new
   end
 
   def create
-    data = params[:file] ? params[:file] : nil 
-    duration = params[:duration] ? params[:duration].to_i : 0 
-    method = params[:method] ? params[:method] : nil
 
-    if data
-      activations = nil
-      filename = nil
-
-      case method
-        when "Keys"
-          activations = YaasWrapper::generate_devkeys(data)
-          filename = "development.sig"
-
-        when "Leases"
-          activations = YaasWrapper::generate_leases(data, duration)
-          filename = "lease.sig"
-      end
-
-      if activations and filename
-        send_file(activations.path, :filename => filename)    
-      else
-        render :text => "#{method} could not be created"
-      end
-
+    if Activation.register(current_user, parse_form)
+      flash[:notice] = "Activation has been created."   
     else
-      render :text => "No data provided"
+      flash[:error] = "Activation could not be created."
     end
 
+    redirect_to :action => "index"
+  end
+
+  def download
+    activation = accessible_activations.find_by_id(params[:id])
+
+    if activation
+      send_data(activation.data, :filename => activation.filename, :type => 'text/plain')
+    else
+      flash[:error] = "There is not such activation."
+      redirect_to :action => "index"
+    end
+  end
+
+  def destroy
+    activation = accessible_activations.find_by_id(params[:id])
+    
+    if activation
+      activation.destroy
+      flash[:notice] = 'Activation was successfully deleted.'
+    else
+      flash[:error] = 'There is no such activation.'     
+    end
+
+    redirect_to :action => 'index'
+  end
+
+  private
+
+  #Do not touch
+  def accessible_activations
+    if current_user.admin
+      Activation
+    else
+      current_user.activations
+    end
+  end
+
+  def parse_form
+    activation = {}
+
+    activation[:file] = params[:file] ? params[:file] : nil
+    activation[:method] = params[:method] ? params[:method] : nil
+    activation[:duration] = params[:duration] ? params[:duration].to_i : nil
+    activation[:comments] = params[:comments] ? params[:comments] : nil
+
+    activation
   end
 
 end

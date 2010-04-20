@@ -3,5 +3,15 @@
   <%=h @user.name %>
 </p>
 
+<p>
+  <b>Email:</b>
+  <%=h @user.email %>
+</p>
+
+<p>
+  <b>Bucket:</b>
+  <%=h @user.bucket %>
+</p>
+
 <%= link_to 'Edit', :action => 'edit', :id => @user.id %> |
-<%= link_to 'Back', :action => 'options' %>
+<%= link_to 'Back', :action => 'index' %>

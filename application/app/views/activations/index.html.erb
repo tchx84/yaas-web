@@ -1,0 +1,38 @@
+<h1>Listing activations</h1>
+
+<table>
+  <tr>
+    <% if @admin %>
+      <th>User:</th>
+    <% end %>
+
+    <th>Created at:</th>
+    <th>Method:</th>
+    <th>Bucket:</th>
+    <th>Comments:</th>
+  </tr>
+
+<% @activations.each do |activation| %>
+  <tr>
+    <% if @admin %>
+      <td><%=h activation.user.name %></td>
+    <% end %>
+
+    <td><%=h activation.created_at %></td>
+    <td><%=h activation.method %></td>
+    <td><%=h activation.bucket %></td>
+    <td><%=h activation.comments %></td>
+    <td><%= link_to 'Download', :action => 'download', :id => activation.id %></td>
+
+    <% if @admin %>
+      <td><%= link_to 'Delete',   :action => 'destroy',  :id => activation.id %></td>
+    <% end %>
+
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Create Activation', :action => 'new' %> |
+<%= link_to 'Back', :controller => 'users', :action => 'options' %>

@@ -5,6 +5,11 @@
   <%= error_messages_for 'activations' %><br/>
 
   <p>
+    <%= label_tag(:comments, "Comments:") %><br />
+    <%= text_field_tag(:comments) %>
+  </p>
+
+  <p>
     <%= label_tag(:duration, "Lease duration:") %><br />
     <%= text_field_tag(:duration) %>
   </p>
@@ -20,7 +25,7 @@
   </p>
 
   <p>
-    <%= submit_tag("Generate") %>
+    <%= submit_tag("Create") %>
   </p>
 <% end %>
 

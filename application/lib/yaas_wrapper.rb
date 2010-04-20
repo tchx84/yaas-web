@@ -16,49 +16,55 @@
 
 # Yet Another Activation System - Client Wrapper
 
-require 'tempfile'
-
 module YaasWrapper
 
-  def self.generate_devkeys(data)
-    hashes_list = parse_data(data)
-    devkeys = yaas_client.generate_devkeys(hashes_list)
-    prepare_file(devkeys)
+  def self.generate_devkeys(hashes_list)
+    yaas_client.generate_devkeys(hashes_list)
   end
 
-  def self.generate_leases(data, duration)
+  def self.generate_leases(hashes_list, duration)
     if duration and duration > 0
-      hashes_list = parse_data(data)
-      leases  = yaas_client.generate_leases(hashes_list, duration)
-      prepare_file(leases)
+      yaas_client.generate_leases(hashes_list, duration)
     else
       nil
     end
   end
 
-  private
+  def self.parse_file(file)
+    hashes_list = []
+    serial_numbers = {}
 
-  def self.prepare_file(activations)
-    tempfile = Tempfile.new('activations')
-    tempfile.write(activations)
-    tempfile.close
-    tempfile
+    file.readlines.each { |line|
+      fields = line.split
+      serial_number = fields[0]
+      uuid = fields[1]
+
+      if !serial_numbers[serial_number] and valid_serial_number(serial_number) and valid_uuid(uuid)
+
+        #TODO: Find a better way to avoid repeated serials
+        serial_numbers[serial_number] = true
+        hash = {"serial_number" => serial_number.to_s, "uuid" => uuid.to_s}
+        hashes_list.push(hash)
+      end
+    }
+  
+    hashes_list
   end
+
+  private
 
   def self.yaas_client
     YaasClient.new(YAAS_CONFIG['server'], YAAS_CONFIG['port'], YAAS_CONFIG['host_handler'])
   end
 
-  def self.parse_data(data)
-    hashes_list = []
+  def self.valid_serial_number(serial_number)
+    return true if serial_number.upcase.match("^[A-Z]{3}[(0-9)|(A-F)]{8}$")
+    false
+  end
 
-    data.readlines.map { |line|
-      fields = line.split
-      hash = {"serial_number" => fields[0].to_s, "uuid" => fields[1].to_s}
-      hashes_list.push(hash)
-    }
-  
-    hashes_list
+  def self.valid_uuid(uuid)
+    return true if uuid.upcase.match("^[(0-9)|(A-F)]{8}(-[(0-9)|(A-F)]{4}){3}-[(0-9)|(A-F)]{12}$")
+    false
   end
 
 end
