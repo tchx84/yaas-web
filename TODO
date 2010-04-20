@@ -1,4 +1,6 @@
 TODO:
-- Basic version, generate leases and devkeys
-- Users and Authentication control
-- Leases and devkeys generation log
+x Basic version, generate leases and devkeys
+x Users and Authentication control
+x Leases and devkeys generation log
+- Visuals css, templates etc
+- Security test and improvements
