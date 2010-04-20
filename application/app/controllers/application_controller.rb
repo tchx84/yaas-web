@@ -36,7 +36,7 @@ class ApplicationController < ActionController::Base
 
   def admin
     if !current_user.admin
-      redirect_to :controller => "options"
+      redirect_to :controller => "users", :action => "options"
       return false
     end
 
