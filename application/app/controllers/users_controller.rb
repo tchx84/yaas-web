@@ -23,10 +23,6 @@ class UsersController < ApplicationController
     @users = User.find(:all, :conditions => ["admin = ?", false])
   end
 
-  def show
-    @user = User.find(params[:id])
-  end
-
   def new
     @user = User.new
   end
@@ -49,7 +45,7 @@ class UsersController < ApplicationController
 
     if user.update_attributes(parse_form())
       flash[:notice] = 'User was successfully updated.'
-      redirect_to :action => :show, :id => user.id
+      redirect_to :action => :index
     end
   end
 

@@ -1,32 +1,36 @@
-<h1>New Activation</h1>
+<div class="info">
+  <h2>Activation</h2>
+  <div>Use your data files to create activations</div>
+</div>
 
-<% form_tag({:action => :create}, :multipart => true) do %>
-
-  <%= error_messages_for 'activations' %><br/>
+<% form_tag({:action => :create}, {:class => "wufoo", :multipart => true}) do %>
+  <%= error_messages_for 'activations' %>
 
   <p>
-    <%= label_tag(:comments, "Comments:") %><br />
-    <%= text_field_tag(:comments) %>
+    <%= label_tag(:comments, "Comments:", :class => "desc") %>
+    <%= text_area_tag(:comments, "", :class => "field textarea small") %>
   </p>
 
   <p>
-    <%= label_tag(:duration, "Lease duration:") %><br />
-    <%= text_field_tag(:duration) %>
+    <%= label_tag(:duration, "Lease duration:", :class => "desc") %>
+    <%= text_field_tag(:duration, "", :class => "field text small") %>
   </p>
 
   <p>
-    <%= label_tag(:file, "Laptops data:") %><br />
-    <%= file_field_tag 'file' %>
+    <%= label_tag(:file, "Laptops data:", :class => "desc") %>
+    <%= file_field_tag(:file, :class => "field file") %>
   </p>
 
   <p>
-    <%= label_tag(:method, "Activation Method:") %><br />
-    <%=select_tag :method, options_for_select(%w{Keys Leases})%> 
+    <%= label_tag(:method, "Activation Method:", :class => "desc") %>
+    <%=select_tag :method, options_for_select(%w{Keys Leases}, :class => "field select")%> 
   </p>
 
   <p>
-    <%= submit_tag("Create") %>
+    <%= submit_tag("Create", :class => "buttons") %>
   </p>
 <% end %>
 
-<%= link_to 'Back', :controller => 'users', :action => 'options' %>
+<div class="info">
+  <%= link_to 'Back', {:controller => 'users', :action => 'options'} %>
+</div>
