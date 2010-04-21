@@ -36,15 +36,17 @@ module YaasWrapper
 
     file.readlines.each { |line|
       fields = line.split
-      serial_number = fields[0]
-      uuid = fields[1]
 
-      if !serial_numbers[serial_number] and valid_serial_number(serial_number) and valid_uuid(uuid)
+      if fields.length == 3
+        serial_number = fields[0]
+        uuid = fields[1]
 
-        #TODO: Find a better way to avoid repeated serials
-        serial_numbers[serial_number] = true
-        hash = {"serial_number" => serial_number.to_s, "uuid" => uuid.to_s}
-        hashes_list.push(hash)
+        if !serial_numbers[serial_number] and valid_serial_number(serial_number) and valid_uuid(uuid)
+          #TODO: Find a better way to avoid repeated serials
+          serial_numbers[serial_number] = true
+          hash = {"serial_number" => serial_number.to_s, "uuid" => uuid.to_s}
+          hashes_list.push(hash)
+        end
       end
     }
   
