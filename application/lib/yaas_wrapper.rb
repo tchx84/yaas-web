@@ -23,11 +23,7 @@ module YaasWrapper
   end
 
   def self.generate_leases(hashes_list, duration)
-    if duration and duration > 0
-      yaas_client.generate_leases(hashes_list, duration)
-    else
-      nil
-    end
+    yaas_client.generate_leases(hashes_list, duration)
   end
 
   def self.parse_file(file)

@@ -3,17 +3,18 @@
   <div>Use your data files to create activations</div>
 </div>
 
+<%= error_messages_for 'activation' %>
+
 <% form_tag({:action => :create}, {:class => "wufoo", :multipart => true}) do %>
-  <%= error_messages_for 'activations' %>
 
   <p>
     <%= label_tag(:comments, "Comments:", :class => "desc") %>
-    <%= text_area_tag(:comments, "", :class => "field textarea small") %>
+    <%= text_area_tag(:comments, @activation.comments, :class => "field textarea small") %>
   </p>
 
   <p>
     <%= label_tag(:duration, "Lease duration:", :class => "desc") %>
-    <%= text_field_tag(:duration, "", :class => "field text small") %>
+    <%= text_field_tag(:duration, @activation.duration, :class => "field text small") %>
   </p>
 
   <p>
@@ -23,7 +24,7 @@
 
   <p>
     <%= label_tag(:method, "Activation Method:", :class => "desc") %>
-    <%=select_tag :method, options_for_select(%w{Keys Leases}, :class => "field select")%> 
+    <%=select_tag :method, options_for_select((@activation.method == "Keys" ? (%w{Keys Leases}) : (%w{Leases Keys})), :class => "field select")%>
   </p>
 
   <p>

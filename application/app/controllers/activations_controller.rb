@@ -24,17 +24,18 @@ class ActivationsController < ApplicationController
   end
 
   def new
+    @activation = Activation.new
   end
 
   def create
+    @activation = Activation.custom_new(current_user, parse_form)
 
-    if Activation.register(current_user, parse_form)
-      flash[:notice] = "Activation has been created."   
+    if !@activation.errors.any? and @activation.save
+      flash[:notice] = "Activation has been created."
+      redirect_to :action => "index"
     else
-      flash[:error] = "Activation could not be created."
+      render :action => "new"
     end
-
-    redirect_to :action => "index"
   end
 
   def download

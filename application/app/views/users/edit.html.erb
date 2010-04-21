@@ -3,6 +3,8 @@
   <div>Modify user's information</div>
 </div>
 
+<%= error_messages_for 'user' %>
+
 <% form_tag({:action => :update, :id => @user.id}, :class => "wufoo") do %>
 
   <p>

@@ -17,43 +17,54 @@
 class Activation < ActiveRecord::Base
 
   belongs_to :user
+  attr_accessor :duration
 
-  def self.register(user, form_data)
-    result = false
+  def self.custom_new(user, form_data)
     activation_data = nil
+
+    activation = Activation.new
+    activation.user_id = user.id
+    activation.comments = form_data[:comments]
+    activation.method = form_data[:method]
+    activation.duration = form_data[:duration]
 
     if form_data[:file]
       hashes_list = YaasWrapper::parse_file(form_data[:file])
       hashes_list_length = hashes_list.length
 
-      if hashes_list_length > 0 and user.bucket_handles(hashes_list_length)
+      if hashes_list_length > 0
 
-        case form_data[:method]
-          when "Keys"
-            activation_data = YaasWrapper::generate_devkeys(hashes_list)
+        if user.bucket_handles(hashes_list_length)
 
-          when "Leases"
-            activation_data = YaasWrapper::generate_leases(hashes_list, form_data[:duration])
+          case form_data[:method]
+            when "Keys"
+              activation_data = YaasWrapper::generate_devkeys(hashes_list)
+
+            when "Leases"
+              if (1..28).include?(form_data[:duration])
+                activation_data = YaasWrapper::generate_leases(hashes_list, activation.duration)
+              else
+                activation.errors.add_to_base "Duration must be within 1 and 28 days"
+              end
+          end
+
+          if activation_data
+            activation.data = activation_data.join
+            activation.bucket = activation_data.length
+          else
+            activation.errors.add_to_base "Activation's backend reported a problem"
+          end
+        else
+          activation.errors.add_to_base "Your activation's bucket is not enough"
         end
-
-        if activation_data
-          activation = Activation.new
-          activation.user_id = user.id
-          activation.comments = form_data[:comments]
-          activation.method = form_data[:method]
-          activation.data = activation_data.join
-          activation.bucket = activation_data.length
-          activation.save!
-
-          user.bucket = user.bucket - hashes_list_length
-          user.save!
-
-          result = true
-        end
+      else
+        activation.errors.add_to_base "The data file you provided has no valid elements"
       end
+    else
+      activation.errors.add_to_base "You need to provide a data file"
     end
 
-    result
+    activation
   end
 
   def filename
@@ -69,6 +80,10 @@ class Activation < ActiveRecord::Base
     end
 
     return_filename
+  end
+
+  def after_create
+    self.user.reduce_bucket(self.bucket)
   end
 
 end

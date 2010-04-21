@@ -32,20 +32,24 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(parse_form())
+    @user = User.new(parse_form())
 
-    if user.save
+    if @user.save
       flash[:notice] = 'User was successfully created.'
       redirect_to :action => 'index'
+    else
+      render :action => "new"
     end
   end
 
   def update
-    user = User.find(params[:id])
+    @user = User.find(params[:id])
 
-    if user.update_attributes(parse_form())
+    if @user.update_attributes(parse_form())
       flash[:notice] = 'User was successfully updated.'
       redirect_to :action => :index
+    else
+      render :action => "edit"
     end
   end
 
