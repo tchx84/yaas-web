@@ -49,8 +49,12 @@ module YaasWrapper
     hashes_list
   end
 
-  def self.max_activation_days
-    YAAS_CONFIG['max_activation_days'] ? YAAS_CONFIG['max_activation_days'].to_i : (365*5)
+  def self.default_activation_limit
+    YAAS_CONFIG['default_activation_limit'] ? YAAS_CONFIG['default_activation_limit'].to_i : 28
+  end
+
+  def self.default_bucket
+    YAAS_CONFIG['default_bucket'] ? YAAS_CONFIG['default_bucket'].to_i : 10
   end
 
   private

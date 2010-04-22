@@ -6,6 +6,7 @@ class CreateUsers < ActiveRecord::Migration
       t.boolean :admin
       t.string  :email
       t.integer :bucket
+      t.integer :activation_limit
 
       t.timestamps
     end

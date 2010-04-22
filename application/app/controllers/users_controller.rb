@@ -25,6 +25,8 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @user.bucket = YaasWrapper::default_bucket
+    @user.activation_limit = YaasWrapper::default_activation_limit
   end
 
   def edit
@@ -95,7 +97,8 @@ class UsersController < ApplicationController
     user[:password] = params[:password] if params[:password]
     user[:admin] = false
     user[:email] = params[:email] if params[:email]
-    user[:bucket] = params[:bucket] ? params[:bucket].to_i : 0
+    user[:bucket] = params[:bucket] ? params[:bucket].to_i : YaasWrapper::default_bucket
+    user[:activation_limit] = params[:activation_limit] ? params[:activation_limit].to_i : YaasWrapper::default_activation_limit
     user
   end
 

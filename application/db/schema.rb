@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20100420150505) do
     t.boolean  "admin"
     t.string   "email"
     t.integer  "bucket"
+    t.integer  "activation_limit"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

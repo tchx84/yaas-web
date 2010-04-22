@@ -28,6 +28,11 @@
   </p>
 
   <p>
+    <%= label_tag(:activation_limit, "Activation Limit (days):", :class => "desc") %><br />
+    <%= text_field_tag(:activation_limit, @user.activation_limit, :class => "field text small") %>
+  </p>
+
+  <p>
     <%= submit_tag("Create", :class => "buttons") %>
   </p>
 <% end %>

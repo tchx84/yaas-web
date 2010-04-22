@@ -8,6 +8,7 @@
     <th><%= label_tag(:name, "Name", :class => "desc") %></th>
     <th><%= label_tag(:email, "Email", :class => "desc") %></th>
     <th><%= label_tag(:bucket, "Bucket", :class => "desc") %></th>
+    <th><%= label_tag(:activation_limit, "Activation Limit (days)", :class => "desc") %></th>
   </tr>
 
 <% @users.each do |user| %>
@@ -15,6 +16,7 @@
     <td><%= label_tag(:name, user.name, :class => "field text addr") %></td>
     <td><%= label_tag(:email, user.email, :class => "field text addr") %></td>
     <td><%= label_tag(:bucket, user.bucket, :class => "field text addr") %></td>
+    <td><%= label_tag(:activation_limit, user.activation_limit, :class => "field text addr") %></td>
     <td><%= link_to 'Edit', :action => 'edit', :id => user.id %></td>
     <td><%= link_to 'Destroy', :action => 'destroy', :id => user.id %></td>
   </tr>
