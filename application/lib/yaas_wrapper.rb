@@ -49,6 +49,10 @@ module YaasWrapper
     hashes_list
   end
 
+  def self.max_activation_days
+    YAAS_CONFIG['max_activation_days'] ? YAAS_CONFIG['max_activation_days'].to_i : (365*5)
+  end
+
   private
 
   def self.yaas_client

@@ -21,6 +21,7 @@ class Activation < ActiveRecord::Base
 
   def self.custom_new(user, form_data)
     activation_data = nil
+    max_activation_days = YaasWrapper::max_activation_days
 
     activation = Activation.new
     activation.user_id = user.id
@@ -41,10 +42,10 @@ class Activation < ActiveRecord::Base
               activation_data = YaasWrapper::generate_devkeys(hashes_list)
 
             when "Leases"
-              if (1..28).include?(form_data[:duration])
+              if (1..max_activation_days).include?(form_data[:duration])
                 activation_data = YaasWrapper::generate_leases(hashes_list, activation.duration)
               else
-                activation.errors.add_to_base "Duration must be within 1 and 28 days"
+                activation.errors.add_to_base "Duration must be within 1 and #{max_activation_days} days"
               end
           end
 
@@ -82,7 +83,7 @@ class Activation < ActiveRecord::Base
     return_filename
   end
 
-  def after_create
+  def after_save
     self.user.reduce_bucket(self.bucket)
   end
 

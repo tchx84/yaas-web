@@ -2,3 +2,4 @@ client_path: /home/tch/ParaguayEduca/yaas/yaas-server/lib/yaas_client.rb
 server: localhost
 port: 9090
 host_handler: yaas
+max_activation_days: 365

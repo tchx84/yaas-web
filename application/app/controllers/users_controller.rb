@@ -66,22 +66,24 @@ class UsersController < ApplicationController
   end
 
   def change_password
+    @user = current_user
   end
 
   def save_changed_password
-    user =  current_user
+    @user =  current_user
     old_password = params[:old_password]
     new_password = params[:new_password]
     new_password_validation = params[:new_password_validation]
 
-    if user.password == old_password and new_password == new_password_validation
-      user.update_attributes({ :password => new_password })
+    if @user.password == old_password and new_password == new_password_validation
+      @user.password = new_password
+    end
+
+    if @user.save
       flash[:notice] = 'Password changed'
       redirect_to :action => 'options'
-
     else
-      flash[:notice] = 'Could not change password'
-      redirect_to :action => 'change_password'
+      render :action => "change_password"
     end
   end
 
