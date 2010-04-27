@@ -1,1 +1,3 @@
 application/log/development.log
+application/config/database.yml
+application/config/yaas.yml
