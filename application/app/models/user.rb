@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
 
   validates_length_of :name, :within => 3..40
   validates_length_of :password, :within => 5..40
+  validates_numericality_of :activation_limit, :greater_than => 0
+  validates_numericality_of :bucket, :greater_than_or_equal_to => 0
   validates_presence_of :name, :email, :password, :bucket, :activation_limit
   validates_uniqueness_of :name, :email
   validates_format_of :email, :with => /^[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i, :message => "Invalid email"
