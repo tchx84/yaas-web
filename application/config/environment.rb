@@ -24,7 +24,6 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 # Yaas Client
 YAAS_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/yaas.yml")
-require YAAS_CONFIG['client_path']
 
 Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence over those specified here.

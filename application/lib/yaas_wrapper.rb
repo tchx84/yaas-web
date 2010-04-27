@@ -16,14 +16,18 @@
 
 # Yet Another Activation System - Client Wrapper
 
+require "xmlrpc/client"
+
 module YaasWrapper
 
   def self.generate_devkeys(hashes_list)
-    yaas_client.generate_devkeys(hashes_list)
+    results = request_to_server("generate_devkeys", hashes_list)
+    results["devkeys_list"]
   end
 
   def self.generate_leases(hashes_list, duration)
-    yaas_client.generate_leases(hashes_list, duration)
+    results = request_to_server("generate_leases", hashes_list, duration)
+    results["leases_list"]
   end
 
   def self.parse_file(file)
@@ -59,8 +63,13 @@ module YaasWrapper
 
   private
 
-  def self.yaas_client
-    YaasClient.new(YAAS_CONFIG['server'], YAAS_CONFIG['port'], YAAS_CONFIG['host_handler'])
+  def self.request_to_server(method, *params)
+     begin
+        tmp_server = XMLRPC::Client.new(YAAS_CONFIG["server"], nil, YAAS_CONFIG["port"])
+        tmp_server.call("#{YAAS_CONFIG["host_handler"]}.#{method}", *params)
+     rescue SignalException, StandardError
+        {}
+     end
   end
 
   def self.valid_serial_number(serial_number)
