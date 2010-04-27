@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  has_many :activations
+  has_many :activations, :dependent => :destroy
 
   validates_length_of :name, :within => 3..40
   validates_length_of :password, :within => 5..40
