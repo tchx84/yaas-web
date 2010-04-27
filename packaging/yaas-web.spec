@@ -71,6 +71,10 @@ fi
 /var/%{name}/application/config
 %attr(-,apache,apache) /var/%{name}/application/config/environment.rb
 /var/%{name}/application/COPYING
+/var/%{name}/application/README
+/var/%{name}/README
+/var/%{name}/TODO
+/var/%{name}/extra
 /var/%{name}/application/db
 /var/%{name}/application/doc
 /var/%{name}/application/lib
@@ -81,7 +85,6 @@ fi
 /var/%{name}/application/script
 /var/%{name}/application/test
 %attr(-,apache,apache) /var/%{name}/application/tmp
-/var/%{name}/application/vendor
 
 %changelog
 
