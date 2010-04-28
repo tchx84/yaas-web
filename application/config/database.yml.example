@@ -5,7 +5,7 @@ development:
   database: yaas
   pool: 5
   timeout: 5000
-  username:
+  username: root
   password:
 
 # Warning: The database defined as "test" will be erased and
@@ -18,7 +18,9 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: mysql
+  database: yaas
   pool: 5
   timeout: 5000
+  username: root
+  password:

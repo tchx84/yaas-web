@@ -1,6 +1,6 @@
 Name: yaas-web
 Version: 0.1
-Release: 4
+Release: 5
 Vendor: Paraguay Educa
 Summary: Web Interface for YAAS
 Group:	Applications/Internet
@@ -91,6 +91,7 @@ fi
 - Removed gems version from environment
 - Added admin user via migrations
 - Rails 3 can wait
+- Fixed admin creation invalid attributes
 
 * Mon Apr 26 2010 Martin Abente. <mabente@paraguayeduca.org>
 - Initial version
