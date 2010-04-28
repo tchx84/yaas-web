@@ -56,8 +56,6 @@ cd /var/%{name}/application
 if [ -f /var/%{name}/application/config/database.yml ] ; then
   # migrations
   rake db:migrate
-  # initial data
-  rake db:seed
 else
   echo "No suitable database config file was found."
 fi
