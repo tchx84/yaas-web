@@ -1,6 +1,6 @@
 Name: yaas-web
 Version: 0.1
-Release: 2
+Release: 3
 Vendor: Paraguay Educa
 Summary: Web Interface for YAAS
 Group:	Applications/Internet
@@ -89,6 +89,7 @@ fi
 * Wed Apr 28 2010 Martin Abente. <mabente@paraguayeduca.org>
 - Added database username and password fields
 - Removed gems version from environment
+- Added admin user via migrations
 
 * Mon Apr 26 2010 Martin Abente. <mabente@paraguayeduca.org>
 - Initial version
