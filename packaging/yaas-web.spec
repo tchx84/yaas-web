@@ -1,6 +1,6 @@
 Name: yaas-web
 Version: 0.1
-Release: 5
+Release: 6
 Vendor: Paraguay Educa
 Summary: Web Interface for YAAS
 Group:	Applications/Internet
@@ -85,6 +85,9 @@ fi
 %attr(-,apache,apache) /var/%{name}/application/tmp
 
 %changelog
+
+* Thu Apr 29 2010 Martin Abente. <mabente@paraguayeduca.org>
+- ssl and secret keyword security
 
 * Wed Apr 28 2010 Martin Abente. <mabente@paraguayeduca.org>
 - Added database username and password fields
