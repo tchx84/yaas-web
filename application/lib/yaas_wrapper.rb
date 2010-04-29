@@ -64,10 +64,16 @@ module YaasWrapper
   private
 
   def self.request_to_server(method, *params)
+    host           = YAAS_CONFIG["server"]
+    port           = YAAS_CONFIG["port"]
+    handler        = YAAS_CONFIG["host_handler"]
+    secret_keyword = YAAS_CONFIG["secret_keyword"]
+
      begin
-        tmp_server = XMLRPC::Client.new(YAAS_CONFIG["server"], nil, YAAS_CONFIG["port"])
-        tmp_server.call("#{YAAS_CONFIG["host_handler"]}.#{method}", *params)
+        tmp_server = XMLRPC::Client.new(host, "/RPC2", port, nil, nil, nil, nil, true)
+        tmp_server.call("#{handler}.#{method}", secret_keyword, *params)
      rescue SignalException, StandardError
+        RAILS_DEFAULT_LOGGER.error("\n\n #{$!.to_s} \n\n")
         {}
      end
   end

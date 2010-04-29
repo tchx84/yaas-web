@@ -1,5 +1,6 @@
-server: localhost
-port: 9090
+server:
+port:
 host_handler: yaas
 default_activation_limit: 365
 default_bucket: 50
+secret_keyword:
