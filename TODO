@@ -1,10 +1,5 @@
 TODO:
-x Basic version, generate leases and devkeys
-x Users and Authentication control
-x Leases and devkeys generation log
-- Visuals css, templates etc
--x Visual integration
--- Better css integration
-- Security test and improvements
---Saving encrypted password
---Defining backend's security scheme
+
+- Encrypt passwords
+- Generate random password
+- User creation notifications
