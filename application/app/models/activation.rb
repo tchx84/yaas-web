@@ -73,7 +73,7 @@ class Activation < ActiveRecord::Base
     case method
 
       when "Keys"
-        return_filename = "development.sig"
+        return_filename = "develop.sig"
 
       when "Leases"
         return_filename = "lease.sig"
