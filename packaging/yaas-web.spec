@@ -43,10 +43,14 @@ fi
 cd /var/%{name}/application/ && rake rails:update
 
 # copy database config template
-cp /var/%{name}/application/config/database.yml.example /var/%{name}/application/config/database.yml
+if [ ! -f /var/%{name}/application/config/database.yml ] ; then
+  cp /var/%{name}/application/config/database.yml.example /var/%{name}/application/config/database.yml
+fi
 
 # copy yaas config template
-cp /var/%{name}/application/config/yaas.yml.example /var/%{name}/application/config/yaas.yml
+if [ ! -f /var/%{name}/application/config/yaas.yml ]; then
+  cp /var/%{name}/application/config/yaas.yml.example /var/%{name}/application/config/yaas.yml
+fi
 
 # try to create DB, if it doesnt exist
 mysql -u root -e 'create database if not exists yaas;' > /dev/null 2>&1 || true
