@@ -44,7 +44,7 @@ class Activation < ActiveRecord::Base
               if user.within_limits(form_data[:duration])
                 activation_data = YaasWrapper::generate_leases(hashes_list, activation.duration)
               else
-                activation.errors.add_to_base "Duration must be within 1 and #{user.activation_limit} days"
+                activation.errors.add_to_base _("Duration must be within 1 and %d days") % user.activation_limit
               end
           end
 
@@ -52,16 +52,16 @@ class Activation < ActiveRecord::Base
             activation.data = activation_data.join
             activation.bucket = activation_data.length
           else
-            activation.errors.add_to_base "Activation's backend reported a problem"
+            activation.errors.add_to_base _("Activation's backend reported a problem")
           end
         else
-          activation.errors.add_to_base "Your activation's bucket is not enough"
+          activation.errors.add_to_base _("Your activation's bucket is not enough")
         end
       else
-        activation.errors.add_to_base "The data file you provided has no valid elements"
+        activation.errors.add_to_base _("The data file you provided has no valid elements")
       end
     else
-      activation.errors.add_to_base "You need to provide a data file"
+      activation.errors.add_to_base _("You need to provide a data file")
     end
 
     activation

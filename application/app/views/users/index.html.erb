@@ -1,14 +1,14 @@
 <div class="info">
-  <h2>Users</h2>
-  <div>List of all users of the system</div>
+  <h2><%= _("Users") %></h2>
+  <div><%= _("List of all users of the system") %></div>
 </div>
 
 <table>
   <tr>
-    <th><%= label_tag(:name, "Name", :class => "desc") %></th>
-    <th><%= label_tag(:email, "Email", :class => "desc") %></th>
-    <th><%= label_tag(:bucket, "Bucket", :class => "desc") %></th>
-    <th><%= label_tag(:activation_limit, "Activation Limit (days)", :class => "desc") %></th>
+    <th><%= label_tag(:name, _("Name"), :class => "desc") %></th>
+    <th><%= label_tag(:email, _("Email"), :class => "desc") %></th>
+    <th><%= label_tag(:bucket, _("Bucket"), :class => "desc") %></th>
+    <th><%= label_tag(:activation_limit, _("Activation Limit (days)"), :class => "desc") %></th>
   </tr>
 
 <% @users.each do |user| %>
@@ -17,8 +17,8 @@
     <td><%= label_tag(:email, user.email, :class => "field text addr") %></td>
     <td><%= label_tag(:bucket, user.bucket, :class => "field text addr") %></td>
     <td><%= label_tag(:activation_limit, user.activation_limit, :class => "field text addr") %></td>
-    <td><%= link_to 'Edit', :action => 'edit', :id => user.id %></td>
-    <td><%= link_to 'Destroy', :action => 'destroy', :id => user.id %></td>
+    <td><%= link_to _('Edit'), :action => 'edit', :id => user.id %></td>
+    <td><%= link_to _('Destroy'), :action => 'destroy', :id => user.id %></td>
   </tr>
 <% end %>
 </table>
@@ -26,6 +26,6 @@
 <br>
 
 <div class="info">
-  <%= link_to 'Create user', :action => 'new' %>
-  <%= link_to 'Back', :action => 'options' %>
+  <%= link_to _('Create user'), :action => 'new' %>
+  <%= link_to _('Back'), :action => 'options' %>
 <div>

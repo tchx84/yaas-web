@@ -37,7 +37,7 @@ class UsersController < ApplicationController
     @user = User.new(parse_form())
 
     if @user.save
-      flash[:notice] = 'User was successfully created.'
+      flash[:notice] = _('User was successfully created.')
       redirect_to :action => 'index'
     else
       render :action => "new"
@@ -48,7 +48,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update_attributes(parse_form())
-      flash[:notice] = 'User was successfully updated.'
+      flash[:notice] = _('User was successfully updated.')
       redirect_to :action => :index
     else
       render :action => "edit"
@@ -59,7 +59,7 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     user.destroy
 
-    flash[:notice] = 'User was successfully deleted.'
+    flash[:notice] = _('User was successfully deleted.')
     redirect_to :action => 'index' 
   end
 
@@ -82,7 +82,7 @@ class UsersController < ApplicationController
     end
 
     if @user.save
-      flash[:notice] = 'Password changed'
+      flash[:notice] = _('Password changed')
       redirect_to :action => 'options'
     else
       render :action => "change_password"

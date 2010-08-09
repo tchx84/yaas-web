@@ -1,0 +1,300 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.1\n"
+"POT-Creation-Date: 2010-08-11 15:44-0600\n"
+"PO-Revision-Date: 2010-08-09 15:22-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: app/controllers/activations_controller.rb:34
+msgid "Activation has been created."
+msgstr ""
+
+#: app/controllers/activations_controller.rb:47
+msgid "There is not such activation."
+msgstr ""
+
+#: app/controllers/activations_controller.rb:57
+msgid "Activation was successfully deleted."
+msgstr ""
+
+#: app/controllers/activations_controller.rb:59
+msgid "There is no such activation."
+msgstr ""
+
+#: app/controllers/sessions_controller.rb:10
+msgid "Session terminated"
+msgstr ""
+
+#: app/controllers/sessions_controller.rb:24
+msgid "User's name or password incorrect"
+msgstr ""
+
+#: app/controllers/users_controller.rb:40
+msgid "User was successfully created."
+msgstr ""
+
+#: app/controllers/users_controller.rb:51
+msgid "User was successfully updated."
+msgstr ""
+
+#: app/controllers/users_controller.rb:62
+msgid "User was successfully deleted."
+msgstr ""
+
+#: app/controllers/users_controller.rb:85
+msgid "Password changed"
+msgstr ""
+
+#: app/models/activation.rb:47
+msgid "Duration must be within 1 and %d days"
+msgstr ""
+
+#: app/models/activation.rb:55
+msgid "Activation's backend reported a problem"
+msgstr ""
+
+#: app/models/activation.rb:58
+msgid "Your activation's bucket is not enough"
+msgstr ""
+
+#: app/models/activation.rb:61
+msgid "The data file you provided has no valid elements"
+msgstr ""
+
+#: app/models/activation.rb:64
+msgid "You need to provide a data file"
+msgstr ""
+
+#: app/views/sessions/new.html.erb:2
+msgid "New Session"
+msgstr ""
+
+#: app/views/sessions/new.html.erb:3
+msgid "Please enter your login information"
+msgstr ""
+
+#: app/views/sessions/new.html.erb:9 app/views/users/edit.html.erb:11
+#: app/views/users/new.html.erb:11
+msgid "Username:"
+msgstr ""
+
+#: app/views/sessions/new.html.erb:14 app/views/users/edit.html.erb:16
+#: app/views/users/new.html.erb:16
+msgid "Password:"
+msgstr ""
+
+#: app/views/sessions/new.html.erb:19
+msgid "Language"
+msgstr ""
+
+#: app/views/sessions/new.html.erb:21
+msgid "Spanish"
+msgstr ""
+
+#: app/views/sessions/new.html.erb:21
+msgid "English"
+msgstr ""
+
+#: app/views/sessions/new.html.erb:28
+msgid "Login"
+msgstr ""
+
+#: app/views/activations/index.html.erb:2
+msgid "Activations"
+msgstr ""
+
+#: app/views/activations/index.html.erb:3
+msgid "Download the activations you have created"
+msgstr ""
+
+#: app/views/activations/index.html.erb:9 app/views/users/index.html.erb:8
+msgid "Name"
+msgstr ""
+
+#: app/views/activations/index.html.erb:12
+msgid "Created"
+msgstr ""
+
+#: app/views/activations/index.html.erb:13
+msgid "Method"
+msgstr ""
+
+#: app/views/activations/index.html.erb:14 app/views/users/index.html.erb:10
+msgid "Bucket"
+msgstr ""
+
+#: app/views/activations/index.html.erb:15
+msgid "Comments"
+msgstr ""
+
+#: app/views/activations/index.html.erb:28
+msgid "Download"
+msgstr ""
+
+#: app/views/activations/index.html.erb:31
+msgid "Delete"
+msgstr ""
+
+#: app/views/activations/index.html.erb:41
+msgid "Create Activation"
+msgstr ""
+
+#: app/views/activations/index.html.erb:42
+#: app/views/activations/new.html.erb:36 app/views/users/edit.html.erb:41
+#: app/views/users/change_password.html.erb:31
+#: app/views/users/index.html.erb:30 app/views/users/new.html.erb:41
+msgid "Back"
+msgstr ""
+
+#: app/views/activations/new.html.erb:2
+msgid "Activation"
+msgstr ""
+
+#: app/views/activations/new.html.erb:3
+msgid "Use your data files to create activations"
+msgstr ""
+
+#: app/views/activations/new.html.erb:11
+msgid "Comments:"
+msgstr ""
+
+#: app/views/activations/new.html.erb:16
+msgid "Lease duration (days):"
+msgstr ""
+
+#: app/views/activations/new.html.erb:21
+msgid "Laptops data:"
+msgstr ""
+
+#: app/views/activations/new.html.erb:26
+msgid "Activation Method:"
+msgstr ""
+
+#: app/views/activations/new.html.erb:31 app/views/users/new.html.erb:36
+msgid "Create"
+msgstr ""
+
+#: app/views/users/edit.html.erb:2
+msgid "Edit User"
+msgstr ""
+
+#: app/views/users/edit.html.erb:3
+msgid "Modify user's information"
+msgstr ""
+
+#: app/views/users/edit.html.erb:21 app/views/users/new.html.erb:21
+msgid "Email:"
+msgstr ""
+
+#: app/views/users/edit.html.erb:26 app/views/users/new.html.erb:26
+msgid "Bucket:"
+msgstr ""
+
+#: app/views/users/edit.html.erb:31 app/views/users/new.html.erb:31
+msgid "Activation Limit (days):"
+msgstr ""
+
+#: app/views/users/edit.html.erb:36
+#: app/views/users/change_password.html.erb:26
+msgid "Save"
+msgstr ""
+
+#: app/views/users/change_password.html.erb:2
+msgid "Password"
+msgstr ""
+
+#: app/views/users/change_password.html.erb:3
+msgid "Change you current password"
+msgstr ""
+
+#: app/views/users/change_password.html.erb:11
+msgid "Old password:"
+msgstr ""
+
+#: app/views/users/change_password.html.erb:16
+msgid "New password:"
+msgstr ""
+
+#: app/views/users/change_password.html.erb:21
+msgid "New password validation:"
+msgstr ""
+
+#: app/views/users/options.html.erb:2
+msgid "%s's Options"
+msgstr ""
+
+#: app/views/users/options.html.erb:4
+msgid "You currently have %d activations available in your bucket"
+msgstr ""
+
+#: app/views/users/options.html.erb:6
+msgid "System administration options"
+msgstr ""
+
+#: app/views/users/options.html.erb:13
+msgid "List users"
+msgstr ""
+
+#: app/views/users/options.html.erb:14 app/views/users/index.html.erb:29
+msgid "Create user"
+msgstr ""
+
+#: app/views/users/options.html.erb:17
+msgid "List activations"
+msgstr ""
+
+#: app/views/users/options.html.erb:18
+msgid "Create activation"
+msgstr ""
+
+#: app/views/users/options.html.erb:20
+msgid "Change password"
+msgstr ""
+
+#: app/views/users/options.html.erb:21
+msgid "Logout"
+msgstr ""
+
+#: app/views/users/index.html.erb:2
+msgid "Users"
+msgstr ""
+
+#: app/views/users/index.html.erb:3
+msgid "List of all users of the system"
+msgstr ""
+
+#: app/views/users/index.html.erb:9
+msgid "Email"
+msgstr ""
+
+#: app/views/users/index.html.erb:11
+msgid "Activation Limit (days)"
+msgstr ""
+
+#: app/views/users/index.html.erb:20
+msgid "Edit"
+msgstr ""
+
+#: app/views/users/index.html.erb:21
+msgid "Destroy"
+msgstr ""
+
+#: app/views/users/new.html.erb:2
+msgid "Create User"
+msgstr ""
+
+#: app/views/users/new.html.erb:3
+msgid "Please complete all user's information"
+msgstr ""

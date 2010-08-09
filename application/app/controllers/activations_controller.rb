@@ -31,7 +31,7 @@ class ActivationsController < ApplicationController
     @activation = Activation.custom_new(current_user, parse_form)
 
     if !@activation.errors.any? and @activation.save
-      flash[:notice] = "Activation has been created."
+      flash[:notice] = _("Activation has been created.")
       redirect_to :action => "index"
     else
       render :action => "new"
@@ -44,7 +44,7 @@ class ActivationsController < ApplicationController
     if activation
       send_data(activation.data, :filename => activation.filename, :type => 'text/plain')
     else
-      flash[:error] = "There is not such activation."
+      flash[:error] = _("There is not such activation.")
       redirect_to :action => "index"
     end
   end
@@ -54,9 +54,9 @@ class ActivationsController < ApplicationController
     
     if activation
       activation.destroy
-      flash[:notice] = 'Activation was successfully deleted.'
+      flash[:notice] = _('Activation was successfully deleted.')
     else
-      flash[:error] = 'There is no such activation.'     
+      flash[:error] = _('There is no such activation.')
     end
 
     redirect_to :action => 'index'
