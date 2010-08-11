@@ -1,6 +1,22 @@
+# All fields must be completed.
+
+# IP address or hostname of yaas server 
 server:
+
+# Port that yaas-server is running on, on the server. Match this with the
+# port specified in the yaas-server configuration.
 port:
+
+# Request handler name. Match this with the host_handler specified in the
+# yaas-server configuration.
 host_handler: yaas
-default_activation_limit: 365
-default_bucket: 50
+
+# Choose a secret keyword (can be anything). Match this with the secret_keyword
+# specified in the yaas-server configuration.
 secret_keyword:
+
+# Default activation limit, in days
+default_activation_limit: 365
+
+# Default raw number of activations (one per laptop) that a user can generate
+default_bucket: 50
