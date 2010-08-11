@@ -35,11 +35,11 @@ module YaasWrapper
     serial_numbers = {}
 
     file.readlines.each { |line|
-      fields = line.split
+      fields = line.split(/[ \t,]+/)
 
-      if fields.length == 3
-        serial_number = fields[0]
-        uuid = fields[1]
+      if fields.length >= 2
+        serial_number = fields[0].strip
+        uuid = fields[1].strip
 
         if !serial_numbers[serial_number] and valid_serial_number(serial_number) and valid_uuid(uuid)
           #TODO: Find a better way to avoid repeated serials
