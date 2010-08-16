@@ -83,6 +83,7 @@ fi
 %attr(-,apache,apache) /var/%{name}/application/log
 /var/%{name}/application/public
 %attr(-,apache,apache) /var/%{name}/application/public/images
+/var/%{name}/application/translation
 /var/%{name}/application/Rakefile
 /var/%{name}/application/script
 /var/%{name}/application/test
