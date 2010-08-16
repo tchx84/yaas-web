@@ -9,13 +9,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100420150505) do
+ActiveRecord::Schema.define(:version => 20100816203010) do
 
   create_table "activations", :force => true do |t|
     t.integer  "user_id"
     t.text     "comments"
     t.integer  "bucket"
-    t.text     "data"
+    t.text     "data",       :limit => 16777215
     t.string   "method"
     t.datetime "created_at"
     t.datetime "updated_at"
