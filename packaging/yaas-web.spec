@@ -1,5 +1,5 @@
 Name: yaas-web
-Version: 0.1
+Version: 0.2
 Release: 7
 Vendor: Paraguay Educa
 Summary: Web Interface for YAAS
@@ -89,6 +89,9 @@ fi
 %attr(-,apache,apache) /var/%{name}/application/tmp
 
 %changelog
+
+* Mon Aug 16 2010 Martin Abente. <mabente@paraguayeduca.org>
+- Localization support by Daniel Drake
 
 * Wed May 19 2010 Martin Abente. <mabente@paraguayeduca.org>
 - Fixed developer key name
