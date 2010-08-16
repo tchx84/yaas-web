@@ -1,6 +1,6 @@
 Name: yaas-web
 Version: 0.2
-Release: 7
+Release: 1
 Vendor: Paraguay Educa
 Summary: Web Interface for YAAS
 Group:	Applications/Internet
