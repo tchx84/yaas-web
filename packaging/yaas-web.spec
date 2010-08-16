@@ -1,6 +1,6 @@
 Name: yaas-web
 Version: 0.2
-Release: 1
+Release: 2
 Vendor: Paraguay Educa
 Summary: Web Interface for YAAS
 Group:	Applications/Internet
@@ -92,7 +92,10 @@ fi
 %changelog
 
 * Mon Aug 16 2010 Martin Abente. <mabente@paraguayeduca.org>
-- Localization support by Daniel Drake
+- Changes from Daniel Drake
+- Localization support
+- Bigger size data activation column
+- 32 minutes time out
 
 * Wed May 19 2010 Martin Abente. <mabente@paraguayeduca.org>
 - Fixed developer key name
