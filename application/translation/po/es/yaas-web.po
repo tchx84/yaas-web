@@ -7,55 +7,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
-"POT-Creation-Date: 2010-08-16 09:14-0600\n"
+"POT-Creation-Date: 2010-09-08 14:25-0400\n"
 "PO-Revision-Date: 2010-08-09 15:22-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-
-#: app/controllers/activations_controller.rb:34
-msgid "Activation has been created."
-msgstr "La Activación ha sido creada."
-
-#: app/controllers/activations_controller.rb:47
-msgid "There is not such activation."
-msgstr "No hay tal actiación."
-
-#: app/controllers/activations_controller.rb:57
-msgid "Activation was successfully deleted."
-msgstr "La Activación fue eliminada exitosamente."
-
-#: app/controllers/activations_controller.rb:59
-msgid "There is no such activation."
-msgstr "No hay tal activación."
-
-#: app/controllers/sessions_controller.rb:10
-msgid "Session terminated"
-msgstr "Sesión Finalizada"
-
-#: app/controllers/sessions_controller.rb:24
-msgid "User's name or password incorrect"
-msgstr "Nombre de Usuario o Contraseña Incorrecta"
-
-#: app/controllers/users_controller.rb:40
-msgid "User was successfully created."
-msgstr "El Usuario fue creado exitosamente."
-
-#: app/controllers/users_controller.rb:51
-msgid "User was successfully updated."
-msgstr "El Usuario fue actualizado exitosamente."
-
-#: app/controllers/users_controller.rb:62
-msgid "User was successfully deleted."
-msgstr "El Usuario fue eliminado exitosamente."
-
-#: app/controllers/users_controller.rb:85
-msgid "Password changed"
-msgstr "Contraseña cambiada"
 
 #: app/models/activation.rb:47
 msgid "Duration must be within 1 and %d days"
@@ -78,6 +38,47 @@ msgstr ""
 msgid "You need to provide a data file"
 msgstr "Necesitas proporcionar un archivo de datos"
 
+#: app/controllers/sessions_controller.rb:10
+msgid "Session terminated"
+msgstr "Sesión Finalizada"
+
+#: app/controllers/sessions_controller.rb:24
+msgid "User's name or password incorrect"
+msgstr "Nombre de Usuario o Contraseña Incorrecta"
+
+#: app/controllers/activations_controller.rb:34
+msgid "Activation has been created."
+msgstr "La Activación ha sido creada."
+
+#: app/controllers/activations_controller.rb:47
+#: app/controllers/activations_controller.rb:58
+msgid "There is not such activation."
+msgstr "No hay tal actiación."
+
+#: app/controllers/activations_controller.rb:68
+msgid "Activation was successfully deleted."
+msgstr "La Activación fue eliminada exitosamente."
+
+#: app/controllers/activations_controller.rb:70
+msgid "There is no such activation."
+msgstr "No hay tal activación."
+
+#: app/controllers/users_controller.rb:40
+msgid "User was successfully created."
+msgstr "El Usuario fue creado exitosamente."
+
+#: app/controllers/users_controller.rb:51
+msgid "User was successfully updated."
+msgstr "El Usuario fue actualizado exitosamente."
+
+#: app/controllers/users_controller.rb:62
+msgid "User was successfully deleted."
+msgstr "El Usuario fue eliminado exitosamente."
+
+#: app/controllers/users_controller.rb:85
+msgid "Password changed"
+msgstr "Contraseña cambiada"
+
 #: app/views/sessions/new.html.erb:2
 msgid "New Session"
 msgstr "Nueva Sesión"
@@ -86,13 +87,13 @@ msgstr "Nueva Sesión"
 msgid "Please enter your login information"
 msgstr "Por favor introduzca su información de usuario"
 
-#: app/views/sessions/new.html.erb:9 app/views/users/edit.html.erb:11
-#: app/views/users/new.html.erb:11
+#: app/views/sessions/new.html.erb:9 app/views/users/new.html.erb:11
+#: app/views/users/edit.html.erb:11
 msgid "Username:"
 msgstr "Nombre de Usuario:"
 
-#: app/views/sessions/new.html.erb:14 app/views/users/edit.html.erb:16
-#: app/views/users/new.html.erb:16
+#: app/views/sessions/new.html.erb:14 app/views/users/new.html.erb:16
+#: app/views/users/edit.html.erb:16
 msgid "Password:"
 msgstr "Contraseña:"
 
@@ -144,18 +145,22 @@ msgstr "Comentarios"
 msgid "Download"
 msgstr "Descargar"
 
-#: app/views/activations/index.html.erb:31
+#: app/views/activations/index.html.erb:29
+msgid "CJson format"
+msgstr "Formato CJson"
+
+#: app/views/activations/index.html.erb:32
 msgid "Delete"
 msgstr "Borrar"
 
-#: app/views/activations/index.html.erb:41
+#: app/views/activations/index.html.erb:42
 msgid "Create Activation"
 msgstr "Crear Activación"
 
-#: app/views/activations/index.html.erb:42
-#: app/views/activations/new.html.erb:36 app/views/users/edit.html.erb:41
-#: app/views/users/change_password.html.erb:31
-#: app/views/users/index.html.erb:30 app/views/users/new.html.erb:41
+#: app/views/activations/index.html.erb:43
+#: app/views/activations/new.html.erb:36 app/views/users/index.html.erb:30
+#: app/views/users/change_password.html.erb:31 app/views/users/new.html.erb:41
+#: app/views/users/edit.html.erb:41
 msgid "Back"
 msgstr "Atrás"
 
@@ -187,87 +192,6 @@ msgstr "Método de Activación"
 msgid "Create"
 msgstr "Creado"
 
-#: app/views/users/edit.html.erb:2
-msgid "Edit User"
-msgstr "Editar Usuario"
-
-#: app/views/users/edit.html.erb:3
-msgid "Modify user's information"
-msgstr "Modificar información de usuario"
-
-#: app/views/users/edit.html.erb:21 app/views/users/new.html.erb:21
-msgid "Email:"
-msgstr "Correo Electrónico:"
-
-#: app/views/users/edit.html.erb:26 app/views/users/new.html.erb:26
-msgid "Bucket:"
-msgstr "Cuota"
-
-#: app/views/users/edit.html.erb:31 app/views/users/new.html.erb:31
-msgid "Activation Limit (days):"
-msgstr "Límite de Activación (días):"
-
-#: app/views/users/edit.html.erb:36
-#: app/views/users/change_password.html.erb:26
-msgid "Save"
-msgstr "Guardar"
-
-#: app/views/users/change_password.html.erb:2
-msgid "Password"
-msgstr "Contraseña"
-
-#: app/views/users/change_password.html.erb:3
-msgid "Change you current password"
-msgstr "Cambia tu contraseña actual"
-
-#: app/views/users/change_password.html.erb:11
-msgid "Old password:"
-msgstr "Contraseña anterior:"
-
-#: app/views/users/change_password.html.erb:16
-msgid "New password:"
-msgstr "Contraseña Nueva:"
-
-#: app/views/users/change_password.html.erb:21
-msgid "New password validation:"
-msgstr "Validación de nueva contraseña:"
-
-#: app/views/users/options.html.erb:2
-msgid "%s's Options"
-msgstr "Opciones"
-
-#: app/views/users/options.html.erb:4
-msgid "You currently have %d activations available in your bucket"
-msgstr "Tienes %d activaciones disponibles en tu cuota"
-
-#: app/views/users/options.html.erb:6
-msgid "System administration options"
-msgstr "Opciones del Sistema Administrativo"
-
-#: app/views/users/options.html.erb:13
-msgid "List users"
-msgstr "Lista de Usuarios"
-
-#: app/views/users/options.html.erb:14 app/views/users/index.html.erb:29
-msgid "Create user"
-msgstr "Crear Usuario"
-
-#: app/views/users/options.html.erb:17
-msgid "List activations"
-msgstr "Lista de Activaciones"
-
-#: app/views/users/options.html.erb:18
-msgid "Create activation"
-msgstr "Crear Activación"
-
-#: app/views/users/options.html.erb:20
-msgid "Change password"
-msgstr "Cambiar Contraseña"
-
-#: app/views/users/options.html.erb:21
-msgid "Logout"
-msgstr "Cerrar Sesión"
-
 #: app/views/users/index.html.erb:2
 msgid "Users"
 msgstr "Usuarios"
@@ -292,6 +216,35 @@ msgstr "Editar"
 msgid "Destroy"
 msgstr "Destruir"
 
+#: app/views/users/index.html.erb:29 app/views/users/options.html.erb:14
+msgid "Create user"
+msgstr "Crear Usuario"
+
+#: app/views/users/change_password.html.erb:2
+msgid "Password"
+msgstr "Contraseña"
+
+#: app/views/users/change_password.html.erb:3
+msgid "Change you current password"
+msgstr "Cambia tu contraseña actual"
+
+#: app/views/users/change_password.html.erb:11
+msgid "Old password:"
+msgstr "Contraseña anterior:"
+
+#: app/views/users/change_password.html.erb:16
+msgid "New password:"
+msgstr "Contraseña Nueva:"
+
+#: app/views/users/change_password.html.erb:21
+msgid "New password validation:"
+msgstr "Validación de nueva contraseña:"
+
+#: app/views/users/change_password.html.erb:26
+#: app/views/users/edit.html.erb:36
+msgid "Save"
+msgstr "Guardar"
+
 #: app/views/users/new.html.erb:2
 msgid "Create User"
 msgstr "Crear Usuario"
@@ -299,3 +252,55 @@ msgstr "Crear Usuario"
 #: app/views/users/new.html.erb:3
 msgid "Please complete all user's information"
 msgstr "Por favor complete toda la información de usuario"
+
+#: app/views/users/new.html.erb:21 app/views/users/edit.html.erb:21
+msgid "Email:"
+msgstr "Correo Electrónico:"
+
+#: app/views/users/new.html.erb:26 app/views/users/edit.html.erb:26
+msgid "Bucket:"
+msgstr "Cuota"
+
+#: app/views/users/new.html.erb:31 app/views/users/edit.html.erb:31
+msgid "Activation Limit (days):"
+msgstr "Límite de Activación (días):"
+
+#: app/views/users/edit.html.erb:2
+msgid "Edit User"
+msgstr "Editar Usuario"
+
+#: app/views/users/edit.html.erb:3
+msgid "Modify user's information"
+msgstr "Modificar información de usuario"
+
+#: app/views/users/options.html.erb:2
+msgid "%s's Options"
+msgstr "Opciones"
+
+#: app/views/users/options.html.erb:4
+msgid "You currently have %d activations available in your bucket"
+msgstr "Tienes %d activaciones disponibles en tu cuota"
+
+#: app/views/users/options.html.erb:6
+msgid "System administration options"
+msgstr "Opciones del Sistema Administrativo"
+
+#: app/views/users/options.html.erb:13
+msgid "List users"
+msgstr "Lista de Usuarios"
+
+#: app/views/users/options.html.erb:17
+msgid "List activations"
+msgstr "Lista de Activaciones"
+
+#: app/views/users/options.html.erb:18
+msgid "Create activation"
+msgstr "Crear Activación"
+
+#: app/views/users/options.html.erb:20
+msgid "Change password"
+msgstr "Cambiar Contraseña"
+
+#: app/views/users/options.html.erb:21
+msgid "Logout"
+msgstr "Cerrar Sesión"
