@@ -86,4 +86,24 @@ class Activation < ActiveRecord::Base
     self.user.reduce_bucket(self.bucket)
   end
 
+  # Converts plain format to canonical json format.
+  def cjson_data
+    cjson_data = "[1,{"
+
+    first_one = true
+    if self.data
+      plain_leases = self.data.split("\n")
+      plain_leases.each { |plain_lease|
+
+          serial_number = plain_lease.split()[1]
+          cjson_data += "#{first_one ? "" : ","}\"#{serial_number}\":\"#{plain_lease}\n\""
+          first_one = false
+      }
+    end
+
+    cjson_data += "}]"
+    cjson_data
+  end
+
+
 end

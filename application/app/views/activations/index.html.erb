@@ -26,6 +26,7 @@
     <td><%= label_tag(:bucket, activation.bucket, :class => "field text addr") %></td>
     <td><%= label_tag(:comments, activation.comments, :class => "field text addr") %></td>
     <td><%= link_to _('Download'), :action => 'download', :id => activation.id %></td>
+    <td><%= link_to _('CJson format'), :action => 'download_cjson', :id => activation.id %></td>
 
     <% if @admin %>
       <td><%= link_to _('Delete'),   :action => 'destroy',  :id => activation.id %></td>

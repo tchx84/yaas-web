@@ -49,6 +49,17 @@ class ActivationsController < ApplicationController
     end
   end
 
+  def download_cjson
+    activation = accessible_activations.find_by_id(params[:id])
+
+    if activation
+      send_data(activation.cjson_data, :filename => activation.filename, :type => 'text/plain')
+    else
+      flash[:error] = _("There is not such activation.")
+      redirect_to :action => "index"
+    end
+  end
+
   def destroy
     activation = accessible_activations.find_by_id(params[:id])
     
