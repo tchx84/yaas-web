@@ -1,6 +1,6 @@
 Name: yaas-web
 Version: 0.2
-Release: 3
+Release: 4
 Vendor: Paraguay Educa
 Summary: Web Interface for YAAS
 Group:	Applications/Internet
@@ -8,7 +8,7 @@ License: GPL
 URL: http://git.paraguayeduca.org/gitweb/users/mabente/yaas-web.git
 Source0: %{name}-%{version}.tar.gz
 BuildRoot: %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
-Requires: ruby(abi) = 1.8, rubygems, rubygem-activesupport, rubygem-rails, mysql-server, ruby-mysql
+Requires: ruby(abi) = 1.8, rubygems, rubygem-activesupport, rubygem-rails, mysql-server, ruby-mysql, rubygem-gettext, rubygem-gettext_activerecord, rubygem-gettext_rails, rubygem-locale_rails
 BuildArch: noarch
 
 %description
@@ -90,6 +90,9 @@ fi
 %attr(-,apache,apache) /var/%{name}/application/tmp
 
 %changelog
+
+* Thu Sep 9 2010 Martin Abente. <mabente@paraguayeduca.org>
+- Add gettext dependencies
 
 * Wed Sep 8 2010 Martin Abente. <mabente@paraguayeduca.org>
 - CJson format suppport
