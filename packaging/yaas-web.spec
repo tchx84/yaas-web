@@ -1,6 +1,6 @@
 Name: yaas-web
 Version: 0.2
-Release: 4
+Release: 5
 Vendor: Paraguay Educa
 Summary: Web Interface for YAAS
 Group:	Applications/Internet
@@ -90,6 +90,9 @@ fi
 %attr(-,apache,apache) /var/%{name}/application/tmp
 
 %changelog
+
+* Fri Sep 10 2010 Martin Abente. <mabente@paraguayeduca.org>
+- Fix sort serial numbers
 
 * Thu Sep 9 2010 Martin Abente. <mabente@paraguayeduca.org>
 - Add gettext dependencies
