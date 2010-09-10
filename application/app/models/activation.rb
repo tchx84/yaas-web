@@ -93,6 +93,7 @@ class Activation < ActiveRecord::Base
     first_one = true
     if self.data
       plain_leases = self.data.split("\n")
+      plain_leases.sort!
       plain_leases.each { |plain_lease|
 
           serial_number = plain_lease.split()[1]
