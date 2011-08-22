@@ -1,6 +1,6 @@
 Name: yaas-web
 Version: 0.2
-Release: 5
+Release: 6
 Vendor: Paraguay Educa
 Summary: Web Interface for YAAS
 Group:	Applications/Internet
@@ -58,8 +58,9 @@ mysql -u root -e 'create database if not exists yaas;' > /dev/null 2>&1 || true
 # load initial database
 cd /var/%{name}/application
 if [ -f /var/%{name}/application/config/database.yml ] ; then
-  # migrations
+  # migrations & seed
   rake db:migrate
+  rake db:seed
 else
   echo "No suitable database config file was found."
 fi

@@ -5,7 +5,7 @@
 
 <%= error_messages_for 'user' %>
 
-<% form_tag({:action => :update, :id => @user.id}, :class => "wufoo") do %>
+<% form_tag({:action => :update, :id => @user.id}, :class => "wufoo", :autocomplete => :off) do %>
 
   <p>
     <%= label_tag(:name, _("Username:"), :class => "desc") %><br />

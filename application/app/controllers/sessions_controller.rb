@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
     password = params[:password]
 
     session[:lang] = params[:language]
-    session[:user_id] = User.find_by_name_and_password(name, password)
+    session[:user_id] = User.authenticate(name, password)
     
     if session[:user_id]
       redirect_to_return

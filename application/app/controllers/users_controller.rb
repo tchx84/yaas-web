@@ -75,13 +75,9 @@ class UsersController < ApplicationController
     @user =  current_user
     old_password = params[:old_password]
     new_password = params[:new_password]
-    new_password_validation = params[:new_password_validation]
+    verification = params[:new_password_validation]
 
-    if @user.password == old_password and new_password == new_password_validation
-      @user.password = new_password
-    end
-
-    if @user.save
+    if @user.change_password(old_password, new_password, verification)
       flash[:notice] = _('Password changed')
       redirect_to :action => 'options'
     else
@@ -94,7 +90,7 @@ class UsersController < ApplicationController
   def parse_form
     user = {}
     user[:name] = params[:name] if params[:name]
-    user[:password] = params[:password] if params[:password]
+    user[:password] = params[:password] if !params[:password].blank?
     user[:admin] = false
     user[:email] = params[:email] if params[:email]
     user[:bucket] = params[:bucket] ? params[:bucket].to_i : YaasWrapper::default_bucket
