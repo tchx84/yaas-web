@@ -7,36 +7,52 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
-"POT-Creation-Date: 2010-09-08 14:25-0400\n"
+"POT-Creation-Date: 2011-08-29 16:25-0400\n"
 "PO-Revision-Date: 2010-08-09 15:22-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: app/models/activation.rb:47
+#: app/models/activation.rb:48
+msgid "You are not authorized to generate developer keys"
+msgstr "No estás autorizado a generar llaves de desarrollador"
+
+#: app/models/activation.rb:55
 msgid "Duration must be within 1 and %d days"
 msgstr "La duración debe estar entre 1 y %d días"
 
-#: app/models/activation.rb:55
+#: app/models/activation.rb:63
 msgid "Activation's backend reported a problem"
 msgstr "El servidor de activación reportó un problema"
 
-#: app/models/activation.rb:58
+#: app/models/activation.rb:66
+msgid "%s belongs to the blacklist"
+msgstr "%s se encuentra en la lista negra"
+
+#: app/models/activation.rb:69
 msgid "Your activation's bucket is not enough"
 msgstr "Su cuota de activación es insuficiente"
 
-#: app/models/activation.rb:61
+#: app/models/activation.rb:72
 msgid "The data file you provided has no valid elements"
 msgstr ""
 "El archivo de datos que ha proveido contiene elementos que no son validos"
 
-#: app/models/activation.rb:64
+#: app/models/activation.rb:75
 msgid "You need to provide a data file"
 msgstr "Necesitas proporcionar un archivo de datos"
+
+#: app/models/user.rb:53
+msgid "Invalid password"
+msgstr "Contraseña incorrecta"
+
+#: app/models/user.rb:58
+msgid "Verification doesn't match"
+msgstr "No se cumplió la verificación"
 
 #: app/controllers/sessions_controller.rb:10
 msgid "Session terminated"
@@ -45,23 +61,6 @@ msgstr "Sesión Finalizada"
 #: app/controllers/sessions_controller.rb:24
 msgid "User's name or password incorrect"
 msgstr "Nombre de Usuario o Contraseña Incorrecta"
-
-#: app/controllers/activations_controller.rb:34
-msgid "Activation has been created."
-msgstr "La Activación ha sido creada."
-
-#: app/controllers/activations_controller.rb:47
-#: app/controllers/activations_controller.rb:58
-msgid "There is not such activation."
-msgstr "No hay tal actiación."
-
-#: app/controllers/activations_controller.rb:68
-msgid "Activation was successfully deleted."
-msgstr "La Activación fue eliminada exitosamente."
-
-#: app/controllers/activations_controller.rb:70
-msgid "There is no such activation."
-msgstr "No hay tal activación."
 
 #: app/controllers/users_controller.rb:40
 msgid "User was successfully created."
@@ -75,43 +74,38 @@ msgstr "El Usuario fue actualizado exitosamente."
 msgid "User was successfully deleted."
 msgstr "El Usuario fue eliminado exitosamente."
 
-#: app/controllers/users_controller.rb:85
+#: app/controllers/users_controller.rb:81
 msgid "Password changed"
 msgstr "Contraseña cambiada"
 
-#: app/views/sessions/new.html.erb:2
-msgid "New Session"
-msgstr "Nueva Sesión"
+#: app/controllers/activations_controller.rb:36
+msgid "Activation has been created."
+msgstr "La Activación ha sido creada."
 
-#: app/views/sessions/new.html.erb:3
-msgid "Please enter your login information"
-msgstr "Por favor introduzca su información de usuario"
+#: app/controllers/activations_controller.rb:49
+#: app/controllers/activations_controller.rb:60
+msgid "There is not such activation."
+msgstr "No hay tal activación."
 
-#: app/views/sessions/new.html.erb:9 app/views/users/new.html.erb:11
-#: app/views/users/edit.html.erb:11
-msgid "Username:"
-msgstr "Nombre de Usuario:"
+#: app/controllers/activations_controller.rb:70
+msgid "Activation was successfully deleted."
+msgstr "La Activación fue eliminada exitosamente."
 
-#: app/views/sessions/new.html.erb:14 app/views/users/new.html.erb:16
-#: app/views/users/edit.html.erb:16
-msgid "Password:"
-msgstr "Contraseña:"
+#: app/controllers/activations_controller.rb:72
+msgid "There is no such activation."
+msgstr "No hay tal activación."
 
-#: app/views/sessions/new.html.erb:19
-msgid "Language"
-msgstr "Idioma"
+#: app/controllers/blacklist_controller.rb:22
+msgid "Blacklisted laptop was successfully created."
+msgstr "El serial ha ingresado a la lista negra."
 
-#: app/views/sessions/new.html.erb:21
-msgid "Spanish"
-msgstr "Español"
+#: app/controllers/blacklist_controller.rb:33
+msgid "Blacklisted laptop was successfully updated."
+msgstr "La información ha sido actualizada."
 
-#: app/views/sessions/new.html.erb:21
-msgid "English"
-msgstr "Inglés"
-
-#: app/views/sessions/new.html.erb:28
-msgid "Login"
-msgstr "Usuario"
+#: app/controllers/blacklist_controller.rb:44
+msgid "Blacklisted laptop was successfully deleted."
+msgstr "El serial fue removido de la lista negra."
 
 #: app/views/activations/index.html.erb:2
 msgid "Activations"
@@ -158,9 +152,11 @@ msgid "Create Activation"
 msgstr "Crear Activación"
 
 #: app/views/activations/index.html.erb:43
-#: app/views/activations/new.html.erb:36 app/views/users/index.html.erb:30
-#: app/views/users/change_password.html.erb:31 app/views/users/new.html.erb:41
-#: app/views/users/edit.html.erb:41
+#: app/views/activations/new.html.erb:40 app/views/blacklist/index.html.erb:28
+#: app/views/blacklist/new.html.erb:26 app/views/blacklist/edit.html.erb:26
+#: app/views/users/index.html.erb:32 app/views/users/new.html.erb:46
+#: app/views/users/change_password.html.erb:31
+#: app/views/users/edit.html.erb:46
 msgid "Back"
 msgstr "Atrás"
 
@@ -182,15 +178,112 @@ msgstr "Duración de Concesión (días):"
 
 #: app/views/activations/new.html.erb:21
 msgid "Laptops data:"
-msgstr "Información de Laptops"
+msgstr "Información de Laptops:"
 
 #: app/views/activations/new.html.erb:26
 msgid "Activation Method:"
-msgstr "Método de Activación"
+msgstr "Método de Activación:"
 
-#: app/views/activations/new.html.erb:31 app/views/users/new.html.erb:36
+#: app/views/activations/new.html.erb:35 app/views/blacklist/new.html.erb:21
+#: app/views/users/new.html.erb:41
 msgid "Create"
-msgstr "Creado"
+msgstr "Crear"
+
+#: app/views/blacklist/index.html.erb:2
+msgid "Blacklisted laptops"
+msgstr "Lista negra"
+
+#: app/views/blacklist/index.html.erb:3
+msgid "List of all blacklisted laptops of the system"
+msgstr "Seriales incluidos en la lista negra"
+
+#: app/views/blacklist/index.html.erb:8
+msgid "Serial Number"
+msgstr "Número de Serial"
+
+#: app/views/blacklist/index.html.erb:9
+msgid "Reason"
+msgstr "Motivo"
+
+#: app/views/blacklist/index.html.erb:10
+msgid "Created at"
+msgstr "Creado el"
+
+#: app/views/blacklist/index.html.erb:18 app/views/users/index.html.erb:22
+msgid "Edit"
+msgstr "Editar"
+
+#: app/views/blacklist/index.html.erb:19 app/views/users/index.html.erb:23
+msgid "Destroy"
+msgstr "Destruir"
+
+#: app/views/blacklist/index.html.erb:27
+msgid "Create blacklisted laptop"
+msgstr "Agregar a la lista"
+
+#: app/views/blacklist/new.html.erb:2
+msgid "Create Blacklisted laptop"
+msgstr "Agregar a la lista"
+
+#: app/views/blacklist/new.html.erb:3
+msgid "Please complete all needed information"
+msgstr "Por favor complete toda la información de usuario"
+
+#: app/views/blacklist/new.html.erb:11 app/views/blacklist/edit.html.erb:11
+msgid "Serial Number:"
+msgstr "Número de Serial:"
+
+#: app/views/blacklist/new.html.erb:16 app/views/blacklist/edit.html.erb:16
+msgid "Reason:"
+msgstr "Motivo:"
+
+#: app/views/blacklist/edit.html.erb:2
+msgid "Edit Blacklisted laptop"
+msgstr "Editar"
+
+#: app/views/blacklist/edit.html.erb:3
+msgid "Modify blacklisted laptop's information"
+msgstr "Modificar"
+
+#: app/views/blacklist/edit.html.erb:21
+#: app/views/users/change_password.html.erb:26
+#: app/views/users/edit.html.erb:41
+msgid "Save"
+msgstr "Guardar"
+
+#: app/views/sessions/new.html.erb:2
+msgid "New Session"
+msgstr "Nueva Sesión"
+
+#: app/views/sessions/new.html.erb:3
+msgid "Please enter your login information"
+msgstr "Por favor introduzca su información de usuario"
+
+#: app/views/sessions/new.html.erb:9 app/views/users/new.html.erb:11
+#: app/views/users/edit.html.erb:11
+msgid "Username:"
+msgstr "Nombre de Usuario:"
+
+#: app/views/sessions/new.html.erb:14 app/views/users/new.html.erb:16
+#: app/views/users/edit.html.erb:16
+msgid "Password:"
+msgstr "Contraseña:"
+
+#: app/views/sessions/new.html.erb:19
+msgid "Language"
+msgstr "Idioma"
+
+#: app/views/sessions/new.html.erb:21
+msgid "Spanish"
+msgstr "Español"
+
+#: app/views/sessions/new.html.erb:21
+msgid "English"
+msgstr "Inglés"
+
+#: app/views/sessions/new.html.erb:28
+msgid "Login"
+msgstr "Ingresar"
 
 #: app/views/users/index.html.erb:2
 msgid "Users"
@@ -208,42 +301,21 @@ msgstr "Correo Electrónico"
 msgid "Activation Limit (days)"
 msgstr "Límite de Activaciones (días)"
 
-#: app/views/users/index.html.erb:20
-msgid "Edit"
-msgstr "Editar"
+#: app/views/users/index.html.erb:12
+msgid "Can Create Dev keys"
+msgstr "Puede crear llaves de desarrollador"
 
 #: app/views/users/index.html.erb:21
-msgid "Destroy"
-msgstr "Destruir"
+msgid "Yes"
+msgstr "Sí"
 
-#: app/views/users/index.html.erb:29 app/views/users/options.html.erb:14
+#: app/views/users/index.html.erb:21
+msgid "No"
+msgstr "No"
+
+#: app/views/users/index.html.erb:31 app/views/users/options.html.erb:14
 msgid "Create user"
 msgstr "Crear Usuario"
-
-#: app/views/users/change_password.html.erb:2
-msgid "Password"
-msgstr "Contraseña"
-
-#: app/views/users/change_password.html.erb:3
-msgid "Change you current password"
-msgstr "Cambia tu contraseña actual"
-
-#: app/views/users/change_password.html.erb:11
-msgid "Old password:"
-msgstr "Contraseña anterior:"
-
-#: app/views/users/change_password.html.erb:16
-msgid "New password:"
-msgstr "Contraseña Nueva:"
-
-#: app/views/users/change_password.html.erb:21
-msgid "New password validation:"
-msgstr "Validación de nueva contraseña:"
-
-#: app/views/users/change_password.html.erb:26
-#: app/views/users/edit.html.erb:36
-msgid "Save"
-msgstr "Guardar"
 
 #: app/views/users/new.html.erb:2
 msgid "Create User"
@@ -265,6 +337,30 @@ msgstr "Cuota"
 msgid "Activation Limit (days):"
 msgstr "Límite de Activación (días):"
 
+#: app/views/users/new.html.erb:36 app/views/users/edit.html.erb:36
+msgid "Can create developer keys:"
+msgstr "Puede crear llaves de desarrollador"
+
+#: app/views/users/change_password.html.erb:2
+msgid "Password"
+msgstr "Contraseña"
+
+#: app/views/users/change_password.html.erb:3
+msgid "Change you current password"
+msgstr "Cambia tu contraseña actual"
+
+#: app/views/users/change_password.html.erb:11
+msgid "Old password:"
+msgstr "Contraseña anterior:"
+
+#: app/views/users/change_password.html.erb:16
+msgid "New password:"
+msgstr "Contraseña Nueva:"
+
+#: app/views/users/change_password.html.erb:21
+msgid "New password validation:"
+msgstr "Validación de nueva contraseña:"
+
 #: app/views/users/edit.html.erb:2
 msgid "Edit User"
 msgstr "Editar Usuario"
@@ -275,7 +371,7 @@ msgstr "Modificar información de usuario"
 
 #: app/views/users/options.html.erb:2
 msgid "%s's Options"
-msgstr "Opciones"
+msgstr "Opciones para %s"
 
 #: app/views/users/options.html.erb:4
 msgid "You currently have %d activations available in your bucket"
@@ -289,18 +385,22 @@ msgstr "Opciones del Sistema Administrativo"
 msgid "List users"
 msgstr "Lista de Usuarios"
 
-#: app/views/users/options.html.erb:17
+#: app/views/users/options.html.erb:15
+msgid "Blacklist"
+msgstr "Lista negra"
+
+#: app/views/users/options.html.erb:18
 msgid "List activations"
 msgstr "Lista de Activaciones"
 
-#: app/views/users/options.html.erb:18
+#: app/views/users/options.html.erb:19
 msgid "Create activation"
 msgstr "Crear Activación"
 
-#: app/views/users/options.html.erb:20
+#: app/views/users/options.html.erb:21
 msgid "Change password"
 msgstr "Cambiar Contraseña"
 
-#: app/views/users/options.html.erb:21
+#: app/views/users/options.html.erb:22
 msgid "Logout"
 msgstr "Cerrar Sesión"
