@@ -40,6 +40,14 @@ class User < ActiveRecord::Base
     true
   end
 
+  def devel_keys_allowed
+    if !admin
+      return self.can_create_dev_keys
+    end
+
+    true
+  end
+
   def change_password(old_password, new_password, verification)
     if !self.valid_password?(old_password)
       self.errors.add_to_base _("Invalid password")

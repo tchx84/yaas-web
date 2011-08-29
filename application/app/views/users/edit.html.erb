@@ -33,6 +33,11 @@
   </p>
 
   <p>
+    <%= label_tag(:can_create_dev_keys, _("Can create developer keys:"), :class => "desc") %>
+    <%= check_box_tag(:can_create_dev_keys, true, @user.devel_keys_allowed) %>
+  </p>
+
+  <p>
     <%= submit_tag(_("Save"), :class => "buttons") %>
   </p>
 <% end %>

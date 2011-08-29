@@ -24,7 +24,11 @@
 
   <p>
     <%= label_tag(:method, _("Activation Method:"), :class => "desc") %>
-    <%=select_tag :method, options_for_select((@activation.method == "Keys" ? (%w{Keys Leases}) : (%w{Leases Keys})), :class => "field select")%>
+    <% if @user.devel_keys_allowed %>
+       <%= select_tag :method, options_for_select((@activation.method == "Keys" ? (%w{Keys Leases}) : (%w{Leases Keys})), :class => "field select")%>
+    <% else %>
+       <%= select_tag :method, options_for_select((%w{Leases}), :class => "field select")%>
+    <% end %>
   </p>
 
   <p>

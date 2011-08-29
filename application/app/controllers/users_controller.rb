@@ -95,6 +95,7 @@ class UsersController < ApplicationController
     user[:email] = params[:email] if params[:email]
     user[:bucket] = params[:bucket] ? params[:bucket].to_i : YaasWrapper::default_bucket
     user[:activation_limit] = params[:activation_limit] ? params[:activation_limit].to_i : YaasWrapper::default_activation_limit
+    user[:can_create_dev_keys] = params[:can_create_dev_keys] == "true" ? true : false
     user
   end
 

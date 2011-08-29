@@ -38,7 +38,11 @@ class Activation < ActiveRecord::Base
 
           case form_data[:method]
             when "Keys"
-              activation_data = YaasWrapper::generate_devkeys(hashes_list)
+              if user.devel_keys_allowed
+                activation_data = YaasWrapper::generate_devkeys(hashes_list)
+              else
+                activation.errors.add_to_base _("You are not authorized to generate developer keys")
+              end
 
             when "Leases"
               if user.within_limits(form_data[:duration])

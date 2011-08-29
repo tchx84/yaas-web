@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20110822192544) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_hash"
+    t.boolean  "can_create_dev_keys", :default => false
   end
 
 end
