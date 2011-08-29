@@ -12,6 +12,7 @@
   <% if @user.admin %>
     <li> <%= link_to _('List users'), :controller => 'users', :action => 'index' %> </li>
     <li> <%= link_to _('Create user'), :controller => 'users', :action => 'new' %> </li>
+    <li> <%= link_to _('Blacklist'), :controller => 'blacklist', :action => 'index' %> </li>
   <% end %>
 
   <li> <%= link_to _('List activations'), :controller => 'activations', :action => 'index' %> </li>

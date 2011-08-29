@@ -36,27 +36,34 @@ class Activation < ActiveRecord::Base
 
         if user.bucket_handles(hashes_list_length)
 
-          case form_data[:method]
-            when "Keys"
-              if user.devel_keys_allowed
-                activation_data = YaasWrapper::generate_devkeys(hashes_list)
-              else
-                activation.errors.add_to_base _("You are not authorized to generate developer keys")
-              end
+          possible_hits = hashes_list.collect { |laptop| laptop["serial_number"] }
+          blacklisted = Blacklist.find(:first, :conditions => ["serial_number in (?)", possible_hits])
+          if !blacklisted
 
-            when "Leases"
-              if user.within_limits(form_data[:duration])
-                activation_data = YaasWrapper::generate_leases(hashes_list, activation.duration)
-              else
-                activation.errors.add_to_base _("Duration must be within 1 and %d days") % user.activation_limit
-              end
-          end
+            case form_data[:method]
+              when "Keys"
+                if user.devel_keys_allowed
+                  activation_data = YaasWrapper::generate_devkeys(hashes_list)
+                else
+                  activation.errors.add_to_base _("You are not authorized to generate developer keys")
+                end
 
-          if activation_data
-            activation.data = activation_data.join
-            activation.bucket = activation_data.length
+              when "Leases"
+                if user.within_limits(form_data[:duration])
+                  activation_data = YaasWrapper::generate_leases(hashes_list, activation.duration)
+                else
+                  activation.errors.add_to_base _("Duration must be within 1 and %d days") % user.activation_limit
+                end
+            end
+
+            if activation_data
+              activation.data = activation_data.join
+              activation.bucket = activation_data.length
+            else
+              activation.errors.add_to_base _("Activation's backend reported a problem")
+            end
           else
-            activation.errors.add_to_base _("Activation's backend reported a problem")
+            activation.errors.add_to_base _("%s belongs to the blacklist") % blacklisted.serial_number
           end
         else
           activation.errors.add_to_base _("Your activation's bucket is not enough")

@@ -21,6 +21,13 @@ ActiveRecord::Schema.define(:version => 20110822192544) do
     t.datetime "updated_at"
   end
 
+  create_table "blacklists", :force => true do |t|
+    t.string   "serial_number"
+    t.text     "reason"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "name"
     t.boolean  "admin"
