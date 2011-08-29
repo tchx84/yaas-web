@@ -1,5 +1,7 @@
 TODO:
 
-- Encrypt passwords
 - Generate random password
 - User creation notifications
+- Allow editing the admin user
+- Confirmation before deletes
+- Fix css theme
