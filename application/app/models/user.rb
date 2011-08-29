@@ -65,7 +65,7 @@ class User < ActiveRecord::Base
 
   def self.authenticate(name, password)
     user = User.find_by_name(name)
-    return user if user.valid_password?(password)
+    return user if user and user.valid_password?(password)
   end
 
   def valid_password?(password)
