@@ -28,7 +28,7 @@ cp -r * $RPM_BUILD_ROOT/var/%{name}
 rm -rf $RPM_BUILD_ROOT/var/%{name}/packaging
 
 # kill logs
-rm -f $RPM_BUILD_ROOT/var/%{name}/application/log/*
+rm -f $RPM_BUILD_ROOT/var/%{name}/log/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -40,24 +40,24 @@ if [ ! -f /etc/httpd/conf.d/yaas-web.conf ] ; then
 fi
 
 # update Rails stuff
-cd /var/%{name}/application/ && rake rails:update
+cd /var/%{name} && rake rails:update
 
 # copy database config template
-if [ ! -f /var/%{name}/application/config/database.yml ] ; then
-  cp /var/%{name}/application/config/database.yml.example /var/%{name}/application/config/database.yml
+if [ ! -f /var/%{name}/config/database.yml ] ; then
+  cp /var/%{name}/config/database.yml.example /var/%{name}/config/database.yml
 fi
 
 # copy yaas config template
-if [ ! -f /var/%{name}/application/config/yaas.yml ]; then
-  cp /var/%{name}/application/config/yaas.yml.example /var/%{name}/application/config/yaas.yml
+if [ ! -f /var/%{name}/config/yaas.yml ]; then
+  cp /var/%{name}/config/yaas.yml.example /var/%{name}/config/yaas.yml
 fi
 
 # try to create DB, if it doesnt exist
 mysql -u root -e 'create database if not exists yaas;' > /dev/null 2>&1 || true
 
 # load initial database
-cd /var/%{name}/application
-if [ -f /var/%{name}/application/config/database.yml ] ; then
+cd /var/%{name}
+if [ -f /var/%{name}/config/database.yml ] ; then
   # migrations & seed
   rake db:migrate
   rake db:seed
@@ -70,25 +70,25 @@ fi
 %files
 %defattr(-,root,root,-)
 %dir /var/%{name}
-/var/%{name}/application/app
-/var/%{name}/application/config
+/var/%{name}/app
+/var/%{name}/config
 %attr(-,apache,apache) /var/%{name}/application/config/environment.rb
-/var/%{name}/application/COPYING
-/var/%{name}/application/README
+/var/%{name}/COPYING
 /var/%{name}/README
+/var/%{name}/README.yaas
 /var/%{name}/TODO
 /var/%{name}/extra
-/var/%{name}/application/db
-/var/%{name}/application/doc
-/var/%{name}/application/lib
-%attr(-,apache,apache) /var/%{name}/application/log
-/var/%{name}/application/public
-%attr(-,apache,apache) /var/%{name}/application/public/images
-/var/%{name}/application/translation
-/var/%{name}/application/Rakefile
-/var/%{name}/application/script
-/var/%{name}/application/test
-%attr(-,apache,apache) /var/%{name}/application/tmp
+/var/%{name}/db
+/var/%{name}/doc
+/var/%{name}/lib
+%attr(-,apache,apache) /var/%{name}/log
+/var/%{name}/public
+%attr(-,apache,apache) /var/%{name}/public/images
+/var/%{name}/translation
+/var/%{name}/Rakefile
+/var/%{name}/script
+/var/%{name}/test
+%attr(-,apache,apache) /var/%{name}/tmp
 
 %changelog
 
