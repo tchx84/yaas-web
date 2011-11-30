@@ -3,7 +3,13 @@
   <div><%= _("Use your data files to create activations") %></div>
 </div>
 
-<%= error_messages_for 'activation' %>
+<% if @activation.errors.any? %>
+  <ul>
+    <% @activation.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
 
 <%= form_tag({:action => :create}, {:class => "wufoo", :multipart => true}) do %>
 

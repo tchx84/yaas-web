@@ -3,7 +3,13 @@
   <div><%= _("Please complete all user's information") %></div>
 </div>
 
-<%= error_messages_for 'user' %>
+<% if @user.errors.any? %>
+  <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
 
 <%= form_tag({:action => :create}, :class => "wufoo") do %>
 

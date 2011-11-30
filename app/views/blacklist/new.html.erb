@@ -3,7 +3,13 @@
   <div><%= _("Please complete all needed information") %></div>
 </div>
 
-<%= error_messages_for 'blacklist' %>
+<% if @blacklist.errors.any? %>
+  <ul>
+    <% @blacklist.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
 
 <%= form_tag({:action => :create}, :class => "wufoo") do %>
 
