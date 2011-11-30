@@ -14,6 +14,8 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>
 #
 
+require 'lib/yaas_wrapper'
+
 class UsersController < ApplicationController
 
   before_filter :admin
