@@ -3,7 +3,7 @@
   <div><%= _("Please enter your login information") %></div>
 </div>
 
-<% form_tag({:controller => :sessions, :action => :create}, {:class => "wufoo"}) do %>
+<%= form_tag({:controller => :sessions, :action => :create}, {:class => "wufoo"}) do %>
 
   <p>
     <%= label_tag(:name, _("Username:"), :class => "desc") %><br />

@@ -5,7 +5,7 @@
 
 <%= error_messages_for 'blacklist' %>
 
-<% form_tag({:action => :update, :id => @blacklist.id}, :class => "wufoo") do %>
+<%= form_tag({:action => :update, :id => @blacklist.id}, :class => "wufoo") do %>
 
   <p>
     <%= label_tag(:name, _("Serial Number:"), :class => "desc") %><br />

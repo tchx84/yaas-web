@@ -5,7 +5,7 @@
 
 <%= error_messages_for 'activation' %>
 
-<% form_tag({:action => :create}, {:class => "wufoo", :multipart => true}) do %>
+<%= form_tag({:action => :create}, {:class => "wufoo", :multipart => true}) do %>
 
   <p>
     <%= label_tag(:comments, _("Comments:"), :class => "desc") %>
