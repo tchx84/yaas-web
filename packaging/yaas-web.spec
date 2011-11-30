@@ -8,7 +8,7 @@ License: GPL
 URL: http://git.paraguayeduca.org/gitweb/users/mabente/yaas-web.git
 Source0: %{name}-%{version}.tar.gz
 BuildRoot: %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
-Requires: ruby(abi) = 1.8, rubygems, rubygem-activesupport, rubygem-rails, mysql-server, ruby-mysql, rubygem-gettext, rubygem-gettext_activerecord, rubygem-gettext_rails, rubygem-locale_rails
+Requires: ruby(abi) = 1.8, rubygems, rubygem-activesupport, rubygem-rails, mysql-server, ruby-mysql, rubygem-fast_gettext, rubygem-gettext, rubygem-mysql2
 BuildArch: noarch
 
 %description
@@ -30,6 +30,9 @@ rm -rf $RPM_BUILD_ROOT/var/%{name}/packaging
 # kill logs
 rm -f $RPM_BUILD_ROOT/var/%{name}/log/*
 
+# create file to be populated on first run
+touch $RPM_BUILD_ROOT/var/%{name}/Gemfile.lock
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -38,9 +41,6 @@ rm -rf $RPM_BUILD_ROOT
 if [ ! -f /etc/httpd/conf.d/yaas-web.conf ] ; then
   cp /var/%{name}/extra/yaas-web.conf /etc/httpd/conf.d/yaas-web.conf.example
 fi
-
-# update Rails stuff
-cd /var/%{name} && rake rails:update
 
 # copy database config template
 if [ ! -f /var/%{name}/config/database.yml ] ; then
@@ -70,25 +70,41 @@ fi
 %files
 %defattr(-,root,root,-)
 %dir /var/%{name}
+/var/%{name}/config.ru
 /var/%{name}/app
-/var/%{name}/config
-%attr(-,apache,apache) /var/%{name}/application/config/environment.rb
+%dir /var/%{name}/config
+%attr(0644,root,root) %ghost /var/%{name}/config/password_salt
+/var/%{name}/config/environments
+/var/%{name}/config/initializers
+/var/%{name}/config/locales
+/var/%{name}/config/application.rb
+/var/%{name}/config/boot.rb
+/var/%{name}/config/routes.rb
+/var/%{name}/config/*.example
+%attr(-,apache,apache) /var/%{name}/config/environment.rb
 /var/%{name}/COPYING
-/var/%{name}/README
-/var/%{name}/README.yaas
+/var/%{name}/Gemfile
+%attr(0664,apache,apache) /var/%{name}/Gemfile.lock
+/var/%{name}/README*
 /var/%{name}/TODO
 /var/%{name}/extra
 /var/%{name}/db
 /var/%{name}/doc
 /var/%{name}/lib
 %attr(-,apache,apache) /var/%{name}/log
-/var/%{name}/public
+%dir /var/%{name}/public
+/var/%{name}/public/*.html
+/var/%{name}/public/*.txt
+/var/%{name}/public/*.ico
+/var/%{name}/public/stylesheets
+/var/%{name}/public/javascripts
 %attr(-,apache,apache) /var/%{name}/public/images
 /var/%{name}/translation
 /var/%{name}/Rakefile
 /var/%{name}/script
 /var/%{name}/test
 %attr(-,apache,apache) /var/%{name}/tmp
+/var/%{name}/vendor
 
 %changelog
 

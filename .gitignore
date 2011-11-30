@@ -1,3 +1,7 @@
-application/log/development.log
-application/config/database.yml
-application/config/yaas.yml
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/
+config/database.yml
+config/yaas.yml
+

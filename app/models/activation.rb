@@ -29,7 +29,9 @@ class Activation < ActiveRecord::Base
     activation.duration = form_data[:duration]
 
     if form_data[:file]
-      hashes_list = YaasWrapper::parse_file(form_data[:file])
+      f = form_data[:file].open
+      hashes_list = YaasWrapper::parse_file(f)
+      f.close
       hashes_list_length = hashes_list.length
 
       if hashes_list_length > 0
