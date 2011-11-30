@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   skip_filter :admin, :only => [:options, :change_password, :save_changed_password]
 
   def index
-    @users = User.find(:all, :conditions => ["admin = ?", false])
+    @users = User.where(:admin => false)
   end
 
   def new

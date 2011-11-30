@@ -20,7 +20,7 @@ class ActivationsController < ApplicationController
 
   def index
     @admin = current_user.admin
-    @activations = accessible_activations.find(:all, :order => "created_at DESC")
+    @activations = accessible_activations.order("created_at DESC")
   end
 
   def new

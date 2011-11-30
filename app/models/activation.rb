@@ -39,7 +39,7 @@ class Activation < ActiveRecord::Base
         if user.bucket_handles(hashes_list_length)
 
           possible_hits = hashes_list.collect { |laptop| laptop["serial_number"] }
-          blacklisted = Blacklist.find(:first, :conditions => ["serial_number in (?)", possible_hits])
+          blacklisted = Blacklist.where(:serial_number => possible_hits).first
           if !blacklisted
 
             case form_data[:method]
