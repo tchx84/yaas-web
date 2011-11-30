@@ -15,8 +15,7 @@
 #
 
 class ApplicationController < ActionController::Base
-  before_init_gettext :set_default_locale
-  init_gettext "yaas-web", :locale_path => "#{RAILS_ROOT}/translation/locale"
+  include FastGettext::Translation
 
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
@@ -25,6 +24,7 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
 
   before_filter :authenticate
+  before_filter :set_gettext_locale
 
   def authenticate
 
@@ -59,18 +59,6 @@ class ApplicationController < ActionController::Base
     else
       redirect_to :controller => 'users', :action => 'options'
     end
-  end
-
-  def set_default_locale
-    if !session[:lang]
-      set_locale default_locale
-    else
-      set_locale session[:lang]
-    end
-  end
-
-  def default_locale
-    "es"
   end
 
 end

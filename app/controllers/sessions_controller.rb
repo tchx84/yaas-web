@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
     name = params[:name]
     password = params[:password]
 
-    session[:lang] = params[:language]
+    session[:locale] = params[:language]
     session[:user_id] = User.authenticate(name, password)
     
     if session[:user_id]

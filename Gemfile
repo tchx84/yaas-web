@@ -29,3 +29,6 @@ gem 'mysql2', '< 0.3'
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+gem 'fast_gettext'
+gem 'gettext', '>=1.9.3', :require => false, :group => :development
