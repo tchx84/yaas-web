@@ -57,20 +57,25 @@ class Activation < ActiveRecord::Base
       return activation
     end
 
-    case form_data[:method]
-      when "Keys"
-        if not user.devel_keys_allowed
-          activation.errors.add_to_base _("You are not authorized to generate developer keys")
-          return activation
-        end
-        activation_data = YaasWrapper::generate_devkeys(hashes_list)
+    begin
+      case form_data[:method]
+        when "Keys"
+          if not user.devel_keys_allowed
+            activation.errors.add_to_base _("You are not authorized to generate developer keys")
+            return activation
+          end
+          activation_data = YaasWrapper::generate_devkeys(hashes_list)
 
-      when "Leases"
-        if not user.within_limits(form_data[:duration])
-          activation.errors.add_to_base _("Duration must be within 1 and %d days") % user.activation_limit
-          return activation
-        end
-        activation_data = YaasWrapper::generate_leases(hashes_list, activation.duration)
+        when "Leases"
+          if not user.within_limits(form_data[:duration])
+            activation.errors.add_to_base _("Duration must be within 1 and %d days") % user.activation_limit
+            return activation
+          end
+          activation_data = YaasWrapper::generate_leases(hashes_list, activation.duration)
+      end
+    rescue SignalException, StandardError
+      activation.errors.add_to_base _("Activation backend reported a problem: %s") % $!
+      return activation
     end
 
     if not activation_data

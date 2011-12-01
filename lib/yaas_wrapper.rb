@@ -69,13 +69,8 @@ module YaasWrapper
     handler        = YAAS_CONFIG["host_handler"]
     secret_keyword = YAAS_CONFIG["secret_keyword"]
 
-     begin
-        tmp_server = XMLRPC::Client.new(host, "/RPC2", port, nil, nil, nil, nil, true, 1800)
-        tmp_server.call("#{handler}.#{method}", secret_keyword, *params)
-     rescue SignalException, StandardError
-        Rails.logger.error("\n\n #{$!.to_s} \n\n")
-        {}
-     end
+    tmp_server = XMLRPC::Client.new(host, "/RPC2", port, nil, nil, nil, nil, true, 1800)
+    tmp_server.call("#{handler}.#{method}", secret_keyword, *params)
   end
 
   def self.valid_serial_number(serial_number)
