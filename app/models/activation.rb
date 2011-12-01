@@ -30,55 +30,56 @@ class Activation < ActiveRecord::Base
     activation.method = form_data[:method]
     activation.duration = form_data[:duration]
 
-    if form_data[:file]
-      f = form_data[:file].open
-      hashes_list = YaasWrapper::parse_file(f)
-      f.close
-      hashes_list_length = hashes_list.length
-
-      if hashes_list_length > 0
-
-        if user.bucket_handles(hashes_list_length)
-
-          possible_hits = hashes_list.collect { |laptop| laptop["serial_number"] }
-          blacklisted = Blacklist.where(:serial_number => possible_hits).first
-          if !blacklisted
-
-            case form_data[:method]
-              when "Keys"
-                if user.devel_keys_allowed
-                  activation_data = YaasWrapper::generate_devkeys(hashes_list)
-                else
-                  activation.errors.add_to_base _("You are not authorized to generate developer keys")
-                end
-
-              when "Leases"
-                if user.within_limits(form_data[:duration])
-                  activation_data = YaasWrapper::generate_leases(hashes_list, activation.duration)
-                else
-                  activation.errors.add_to_base _("Duration must be within 1 and %d days") % user.activation_limit
-                end
-            end
-
-            if activation_data
-              activation.data = activation_data.join
-              activation.bucket = activation_data.length
-            else
-              activation.errors.add_to_base _("Activation's backend reported a problem")
-            end
-          else
-            activation.errors.add_to_base _("%s belongs to the blacklist") % blacklisted.serial_number
-          end
-        else
-          activation.errors.add_to_base _("Your activation's bucket is not enough")
-        end
-      else
-        activation.errors.add_to_base _("The data file you provided has no valid elements")
-      end
-    else
+    if not form_data[:file]
       activation.errors.add_to_base _("You need to provide a data file")
+      return activation
     end
 
+    f = form_data[:file].open
+    hashes_list = YaasWrapper::parse_file(f)
+    f.close
+    hashes_list_length = hashes_list.length
+
+    if hashes_list_length == 0
+      activation.errors.add_to_base _("The data file you provided has no valid elements")
+      return activation
+    end
+
+    if not user.bucket_handles(hashes_list_length)
+      activation.errors.add_to_base _("Your activation's bucket is not enough")
+      return activation
+    end
+
+    possible_hits = hashes_list.collect { |laptop| laptop["serial_number"] }
+    blacklisted = Blacklist.where(:serial_number => possible_hits).first
+    if blacklisted
+      activation.errors.add_to_base _("%s belongs to the blacklist") % blacklisted.serial_number
+      return activation
+    end
+
+    case form_data[:method]
+      when "Keys"
+        if not user.devel_keys_allowed
+          activation.errors.add_to_base _("You are not authorized to generate developer keys")
+          return activation
+        end
+        activation_data = YaasWrapper::generate_devkeys(hashes_list)
+
+      when "Leases"
+        if not user.within_limits(form_data[:duration])
+          activation.errors.add_to_base _("Duration must be within 1 and %d days") % user.activation_limit
+          return activation
+        end
+        activation_data = YaasWrapper::generate_leases(hashes_list, activation.duration)
+    end
+
+    if not activation_data
+      activation.errors.add_to_base _("Activation's backend reported a problem")
+      return activation
+    end
+
+    activation.data = activation_data.join
+    activation.bucket = activation_data.length
     activation
   end
 
