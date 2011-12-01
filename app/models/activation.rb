@@ -19,6 +19,7 @@ require 'lib/yaas_wrapper'
 class Activation < ActiveRecord::Base
 
   belongs_to :user
+  after_save :reduce_user_bucket
   attr_accessor :duration
 
   def self.custom_new(user, form_data)
@@ -103,7 +104,7 @@ class Activation < ActiveRecord::Base
     return_filename
   end
 
-  def after_save
+  def reduce_user_bucket
     self.user.reduce_bucket(self.bucket)
   end
 
