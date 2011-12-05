@@ -1,5 +1,5 @@
 Name: yaas-web
-Version: 0.3
+Version: 0.4
 Release: 1
 Vendor: Paraguay Educa
 Summary: Web Interface for YAAS
@@ -107,6 +107,10 @@ fi
 /var/%{name}/vendor
 
 %changelog
+* Mon Dec  5 2011 Daniel Drake <dsd@laptop.org>
+- Port to rails3
+- Display server errors in UI
+- Config file must be manually moved to new location on upgrades from old versions
 
 * Mon Aug 29 2011 Martin Abente. <tch@paraguayeduca.org>
 - Heavy security enhancements
