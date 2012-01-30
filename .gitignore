@@ -5,5 +5,4 @@ tmp/
 *.swp
 config/database.yml
 config/yaas.yml
-Gemfile.lock
 config/password_salt
