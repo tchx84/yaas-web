@@ -1,5 +1,5 @@
 Name: yaas-web
-Version: 0.4
+Version: 0.4.1
 Release: 1
 Vendor: Paraguay Educa
 Summary: Web Interface for YAAS
@@ -29,9 +29,6 @@ rm -rf $RPM_BUILD_ROOT/var/%{name}/packaging
 
 # kill logs
 rm -f $RPM_BUILD_ROOT/var/%{name}/log/*
-
-# create file to be populated on first run
-touch $RPM_BUILD_ROOT/var/%{name}/Gemfile.lock
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -83,8 +80,6 @@ fi
 /var/%{name}/config/*.example
 %attr(-,apache,apache) /var/%{name}/config/environment.rb
 /var/%{name}/COPYING
-/var/%{name}/Gemfile
-%attr(0664,apache,apache) /var/%{name}/Gemfile.lock
 /var/%{name}/README*
 /var/%{name}/TODO
 /var/%{name}/extra
