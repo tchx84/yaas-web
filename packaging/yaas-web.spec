@@ -1,5 +1,5 @@
 Name: yaas-web
-Version: 0.4.1
+Version: 0.5.0
 Release: 1
 Vendor: Paraguay Educa
 Summary: Web Interface for YAAS
@@ -8,7 +8,7 @@ License: GPL
 URL: http://git.paraguayeduca.org/gitweb/users/mabente/yaas-web.git
 Source0: %{name}-%{version}.tar.gz
 BuildRoot: %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
-Requires: ruby(abi) = 1.8, rubygems, rubygem-activesupport, rubygem-rails, mysql-server, ruby-mysql, rubygem-fast_gettext, rubygem-gettext, rubygem-mysql2
+Requires: ruby(abi) = 1.9.1, rubygems, rubygem-activesupport, rubygem-rails, mysql-server, ruby-mysql, rubygem-fast_gettext, rubygem-gettext, rubygem-mysql2
 BuildArch: noarch
 
 %description
