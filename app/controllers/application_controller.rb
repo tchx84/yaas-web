@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
 
     if !session[:user_id]
       redirect_to :controller => "sessions", :action => "new"
-      session[:return] = request.request_uri if !session[:return]
+      session[:return] = request.fullpath if !session[:return]
       return false
     end
 
