@@ -70,6 +70,12 @@ module YaasWrapper
     secret_keyword = YAAS_CONFIG["secret_keyword"]
 
     tmp_server = XMLRPC::Client.new(host, "/RPC2", port, nil, nil, nil, nil, true, 1800)
+
+    # As of Ruby-1.9, Net::HTTP verifies SSL certificates by default.
+    # Try to disable this.
+    http = tmp_server.instance_variable_get(:@http)
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE if !http.nil?
+
     tmp_server.call("#{handler}.#{method}", secret_keyword, *params)
   end
 
