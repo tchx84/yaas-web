@@ -50,7 +50,7 @@ if [ ! -f /var/%{name}/config/yaas.yml ]; then
 fi
 
 # try to create DB, if it doesnt exist
-mysql -u root -e 'create database if not exists yaas;' > /dev/null 2>&1 || true
+mysql -u root -e 'create database if not exists yaas character set utf8mb4;' > /dev/null 2>&1 || true
 
 # load initial database
 cd /var/%{name}
