@@ -1,5 +1,5 @@
 Name: yaas-web
-Version: 0.5.0
+Version: 0.5.1
 Release: 1
 Vendor: Paraguay Educa
 Summary: Web Interface for YAAS
