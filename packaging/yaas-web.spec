@@ -49,17 +49,12 @@ if [ ! -f /var/%{name}/config/yaas.yml ]; then
   cp /var/%{name}/config/yaas.yml.example /var/%{name}/config/yaas.yml
 fi
 
-# try to create DB, if it doesnt exist
-mysql -u root -e 'create database if not exists yaas character set utf8mb4;' > /dev/null 2>&1 || true
-
-# load initial database
-cd /var/%{name}
-if [ -f /var/%{name}/config/database.yml ] ; then
-  # migrations & seed
+existing_db=$(mysql -u root -e "show databases like 'yaas'")
+if [ -z "$existing_db" ]; then
+  rake db:setup
+else
   rake db:migrate
   rake db:seed
-else
-  echo "No suitable database config file was found."
 fi
 
 %postun

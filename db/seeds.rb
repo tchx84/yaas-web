@@ -6,14 +6,9 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
 
-if !User.find_by_name("admin")
-  User.create!({
-                :name => "admin",
+User.find_or_create_by_name("admin",
                 :password => "admin", 
                 :admin => true, 
                 :email => "yaas@paraguayeduca.org",
                 :bucket => 1,
-                :activation_limit => 1
-              })
-end
-
+                :activation_limit => 1)
