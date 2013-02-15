@@ -1,13 +1,11 @@
 # Read or generates passwords salt
 def default_salt
-  require 'active_support/secure_random'
-
   salt = nil
   file_path = Rails.root.join("config", "password_salt")
 
   if !File.exists?(file_path)
     file = File.open(file_path, "w")
-    file.puts(ActiveSupport::SecureRandom.base64(8))
+    file.puts(SecureRandom.base64(8))
     file.close
   end
 
