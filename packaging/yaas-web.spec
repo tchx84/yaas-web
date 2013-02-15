@@ -1,5 +1,5 @@
 Name: yaas-web
-Version: 0.5.1
+Version: 0.6.0
 Release: 1
 Vendor: Paraguay Educa
 Summary: Web Interface for YAAS
@@ -7,7 +7,7 @@ Group:	Applications/Internet
 License: GPL
 URL: http://git.paraguayeduca.org/gitweb/users/mabente/yaas-web.git
 Source0: %{name}-%{version}.tar.gz
-Requires: ruby(abi) = 1.9.1, rubygems, rubygem-activesupport, rubygem-rails, mysql-server, ruby-mysql, rubygem-fast_gettext, rubygem-gettext, rubygem-mysql2, rubygem-gettext_i18n_rails
+Requires: ruby(abi) = 1.9.1, rubygems, rubygem-activesupport, rubygem-rails, mysql-server, ruby-mysql, rubygem-fast_gettext, rubygem-gettext, rubygem-mysql2, rubygem-gettext_i18n_rails, rubygem-sqlite3
 BuildArch: noarch
 
 %description
@@ -40,6 +40,7 @@ if [ ! -f /var/%{name}/config/yaas.yml ]; then
   cp /var/%{name}/config/yaas.yml.example /var/%{name}/config/yaas.yml
 fi
 
+cd /var/%{name}
 existing_db=$(mysql -u root -e "show databases like 'yaas'")
 if [ -z "$existing_db" ]; then
   rake db:setup
@@ -85,7 +86,6 @@ fi
 /var/%{name}/script
 /var/%{name}/test
 %attr(-,apache,apache) /var/%{name}/tmp
-/var/%{name}/vendor
 
 %changelog
 * Mon Dec  5 2011 Daniel Drake <dsd@laptop.org>
