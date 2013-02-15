@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
 
   attr_accessor :password
+  attr_accessible :name, :admin, :email, :bucket, :activation_limit
+  attr_accessible :can_create_dev_keys, :password
   before_save :hash_password  
 
   has_many :activations, :dependent => :destroy
