@@ -3,7 +3,7 @@ def default_salt
   require 'active_support/secure_random'
 
   salt = nil
-  file_path = "#{RAILS_ROOT}/config/password_salt"
+  file_path = Rails.root.join("config", "password_salt")
 
   if !File.exists?(file_path)
     file = File.open(file_path, "w")
@@ -18,6 +18,6 @@ def default_salt
 end
 
 # Yaas Client
-YAAS_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/yaas.yml")
+YAAS_CONFIG = YAML.load_file(Rails.root.join("config", "yaas.yml"))
 YAAS_CONFIG[:password_salt] = default_salt
 
