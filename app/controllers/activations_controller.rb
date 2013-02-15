@@ -32,7 +32,7 @@ class ActivationsController < ApplicationController
     @user = current_user
     @activation = Activation.custom_new(@user, parse_form)
 
-    if !(@activation.errors.length > 0) and @activation.save
+    if !(@activation.errors.size > 0) and @activation.save
       flash[:notice] = _("Activation has been created.")
       redirect_to :action => "index"
     else

@@ -32,7 +32,7 @@ class Activation < ActiveRecord::Base
     activation.duration = form_data[:duration]
 
     if not form_data[:file]
-      activation.errors.add_to_base _("You need to provide a data file")
+      activation.errors[:base] << _("You need to provide a data file")
       return activation
     end
 
@@ -42,19 +42,19 @@ class Activation < ActiveRecord::Base
     hashes_list_length = hashes_list.length
 
     if hashes_list_length == 0
-      activation.errors.add_to_base _("The data file you provided has no valid elements")
+      activation.errors[:base] << _("The data file you provided has no valid elements")
       return activation
     end
 
     if not user.bucket_handles(hashes_list_length)
-      activation.errors.add_to_base _("Your activation's bucket is not enough")
+      activation.errors[:base] << _("Your activation's bucket is not enough")
       return activation
     end
 
     possible_hits = hashes_list.collect { |laptop| laptop["serial_number"] }
     blacklisted = Blacklist.where(:serial_number => possible_hits).first
     if blacklisted
-      activation.errors.add_to_base _("%s belongs to the blacklist") % blacklisted.serial_number
+      activation.errors[:base] << _("%s belongs to the blacklist") % blacklisted.serial_number
       return activation
     end
 
@@ -62,25 +62,25 @@ class Activation < ActiveRecord::Base
       case form_data[:method]
         when "Keys"
           if not user.devel_keys_allowed
-            activation.errors.add_to_base _("You are not authorized to generate developer keys")
+            activation.errors[:base] << _("You are not authorized to generate developer keys")
             return activation
           end
           activation_data = YaasWrapper::generate_devkeys(hashes_list)
 
         when "Leases"
           if not user.within_limits(form_data[:duration])
-            activation.errors.add_to_base _("Duration must be within 1 and %d days") % user.activation_limit
+            activation.errors[:base] << _("Duration must be within 1 and %d days") % user.activation_limit
             return activation
           end
           activation_data = YaasWrapper::generate_leases(hashes_list, activation.duration)
       end
     rescue SignalException, StandardError
-      activation.errors.add_to_base _("Activation backend reported a problem: %s") % $!
+      activation.errors[:base] << _("Activation backend reported a problem: %s") % $!
       return activation
     end
 
     if not activation_data
-      activation.errors.add_to_base _("Activation's backend reported a problem")
+      activation.errors[:base] << _("Activation's backend reported a problem")
       return activation
     end
 
