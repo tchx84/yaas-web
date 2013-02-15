@@ -8,7 +8,7 @@ License: GPL
 URL: http://git.paraguayeduca.org/gitweb/users/mabente/yaas-web.git
 Source0: %{name}-%{version}.tar.gz
 BuildRoot: %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
-Requires: ruby(abi) = 1.9.1, rubygems, rubygem-activesupport, rubygem-rails, mysql-server, ruby-mysql, rubygem-fast_gettext, rubygem-gettext, rubygem-mysql2
+Requires: ruby(abi) = 1.9.1, rubygems, rubygem-activesupport, rubygem-rails, mysql-server, ruby-mysql, rubygem-fast_gettext, rubygem-gettext, rubygem-mysql2, rubygem-gettext_i18n_rails
 BuildArch: noarch
 
 %description

@@ -28,7 +28,7 @@ require 'rails/all'
 # Required gems that are expected to be installed through RPMS
 require 'active_record' # load early
 require 'mysql2'
-require 'fast_gettext'
+require 'gettext_i18n_rails'
 
 # gettext only required for development (for generating po/mo etc).
 if Rails.env.development?
