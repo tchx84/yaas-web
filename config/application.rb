@@ -79,8 +79,8 @@ module YaasWeb
     # parameters by using an attr_accessible or attr_protected declaration.
     config.active_record.whitelist_attributes = true
 
-    # Enable the asset pipeline
-    config.assets.enabled = true
+    # Disable the asset pipeline - seems overkill for a small web ui
+    config.assets.enabled = false
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
