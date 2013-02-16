@@ -7,7 +7,6 @@ Group:	Applications/Internet
 License: GPL
 URL: http://git.paraguayeduca.org/gitweb/users/mabente/yaas-web.git
 Source0: %{name}-%{version}.tar.gz
-BuildRoot: %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 Requires: ruby(abi) = 1.9.1, rubygems, rubygem-activesupport, rubygem-rails, mysql-server, ruby-mysql, rubygem-fast_gettext, rubygem-gettext, rubygem-mysql2, rubygem-gettext_i18n_rails
 BuildArch: noarch
 
@@ -30,15 +29,7 @@ rm -rf $RPM_BUILD_ROOT/var/%{name}/packaging
 # kill logs
 rm -f $RPM_BUILD_ROOT/var/%{name}/log/*
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
 %post
-# copy virtual-host-example-config to /etc/httpd/conf.d
-if [ ! -f /etc/httpd/conf.d/yaas-web.conf ] ; then
-  cp /var/%{name}/extra/yaas-web.conf /etc/httpd/conf.d/yaas-web.conf.example
-fi
-
 # copy database config template
 if [ ! -f /var/%{name}/config/database.yml ] ; then
   cp /var/%{name}/config/database.yml.example /var/%{name}/config/database.yml
@@ -60,9 +51,9 @@ fi
 %postun
 
 %files
-%defattr(-,root,root,-)
+%doc extra/yaas-web.conf
 %dir /var/%{name}
-/var/%{name}/config.ru
+%attr(-,apache,apache) /var/%{name}/config.ru
 /var/%{name}/app
 %dir /var/%{name}/config
 %attr(0644,root,root) %ghost /var/%{name}/config/password_salt
